@@ -1,72 +1,130 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Gunjan Joshi - Remotely exploring the earth, one pixel at a time 🛰🌍 </title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gunjan Joshi</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://via.placeholder.com/1500x1000') no-repeat center center/cover;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+    header {
+      background: rgba(0,0,0,0.5);
+      padding: 60px 20px;
+      text-align: center;
+    }
+    nav {
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      gap: 20px;
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 10px 20px;
+      font-size: 1em;
+    }
+    nav button.active {
+      border-bottom: 2px solid white;
+    }
+    .tabcontent {
+      display: none;
+      padding: 40px;
+      background: rgba(0,0,0,0.6);
+    }
+    .tabcontent.active {
+      display: block;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.7);
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      font-size: 1.5em;
+      font-style: italic;
+    }
+    .links a {
+      margin: 0 10px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gunjan Joshi</h1>
+    <div class="subtitle">Remotely exploring the Earth, one pixel at a time 🛰🌍</div>
+  </header>
 
-		<div id="wrapper">
+  <nav>
+    <button class="tablink active" onclick="openTab(event, 'about')">About Me</button>
+    <button class="tablink" onclick="openTab(event, 'research')">Research</button>
+    <button class="tablink" onclick="openTab(event, 'volunteering')">Volunteering</button>
+  </nav>
 
-				<header id="header">
-						<div class="logo">
-							<a href="#">GJ</a>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Gunjan Joshi</h1>
-								<p>Remotely exploring the earth, one pixel at a time 🛰🌍</p>
-								<p>
-									<a href="https://github.com/joshigunjan/" class="icon brands fa-github"><span class="label">GitHub</span></a>
-									<a href="https://twitter.com/gunjanjoshi882" class="icon brands fa-twitter"><span class="label">Twitter</span></a>
-									<a href="mailto:gunjanjoshi88@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a>
-								</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#about">About me</a></li>
-								<li><a href="#research">Research</a></li>
-								<li><a href="#teaching">Teaching</a></li>
-								</ul>
-						</nav>
-					</header>
+  <div id="about" class="tabcontent active">
+    <h2>About Me</h2>
+    <p>I specialize in remote sensing with expertise in fusing synthetic aperture radar (SAR) and multispectral optical data using explainable neural networks for disaster management and cryosphere monitoring.</p>
+  </div>
 
-				<div id="main">
+  <div id="research" class="tabcontent">
+    <h2>🎓 Academic Background</h2>
+    <ul>
+      <li>Ph.D. in Electrical Engineering and Information Systems, University of Tokyo (2024)</li>
+      <li>M.Eng. in Electrical Engineering and Information Systems, University of Tokyo (2021)</li>
+      <li>B.Eng. in Electronics and Communication Engineering, Visvesvaraya Technological University, India (2016)</li>
+    </ul>
+    <h2>🏆 Achievements</h2>
+    <ul>
+      <li>Recipient of the Japanese Government MEXT Scholarship (2018)</li>
+      <li>Awarded the Japan Society of Photogrammetry and Remote Sensing (JSPRS) Award (2021)</li>
+      <li>Winner of the IEEE GRSS Excellence in Technical Communication Student Prize Award (2022)</li>
+    </ul>
+  </div>
 
-						<article id="about">
-								<h2 class="major">About Me</h2>
-								<p>This is where you would add information about yourself.</p>
-								</article>
+  <div id="volunteering" class="tabcontent">
+    <h2>🌐 Professional Involvement</h2>
+    <p>Webinar Strategist and Social Media Co-lead for the IEEE Geoscience and Remote Sensing Society (GRSS), driving educational outreach and engagement.</p>
+  </div>
 
-						<article id="research">
-								<h2 class="major">Research</h2>
-								<p>Details about your research projects would go here.</p>
-								</article>
+  <footer>
+    <div class="links">
+      <a href="https://github.com/yourusername">GitHub</a>
+      <a href="https://twitter.com/yourhandle">Twitter</a>
+      <a href="mailto:your.email@example.com">Email</a>
+    </div>
+  </footer>
 
-						<article id="teaching">
-								<h2 class="major">Teaching</h2>
-								<p>Information about your teaching experience and activities.</p>
-								</article>
+  <script>
+    function openTab(evt, tabName) {
+      const tabcontents = document.querySelectorAll('.tabcontent');
+      const tablinks = document.querySelectorAll('.tablink');
 
-					</div>
+      tabcontents.forEach((content) => {
+        content.classList.remove('active');
+      });
 
-				<footer id="footer">
-						<p class="copyright">&copy; Gunjan Joshi. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+      tablinks.forEach((link) => {
+        link.classList.remove('active');
+      });
 
-			</div>
-
-		<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+      document.getElementById(tabName).classList.add('active');
+      evt.currentTarget.classList.add('active');
+    }
+  </script>
+</body>
 </html>
+
