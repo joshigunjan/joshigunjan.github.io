@@ -61,7 +61,7 @@
       margin: 0 10px;
       color: white;
     }
-    @keyframes fadeZoomIn {
+   @keyframes fadeZoomIn {
   0% {
     opacity: 0;
     transform: scale(1.05);
@@ -75,6 +75,16 @@
 body {
   animation: fadeZoomIn 1.5s ease-out;
 }
+
+.intro-text {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: white;
+  opacity: 0;
+  animation: fadeZoomIn 2s ease-out forwards;
+  animation-delay: 1s; /* Delay to make it appear after the name */
+}
+
 
   </style>
 </head>
