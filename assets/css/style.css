@@ -515,3 +515,8 @@ small{color:var(--muted)}
   font-size: 13px;
   border-top: 1px solid var(--border);
 }
+
+
+/* Highlight my name in author lists */
+.me{ color: var(--accent2); font-weight: 900; }
+.pub-authors{ margin:0 0 6px 0; font-size: 13px; color: var(--muted); }
