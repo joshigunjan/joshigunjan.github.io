@@ -1,6 +1,4 @@
-# Gunjan Joshi — GitHub Pages Site
-
-Static HTML site ready for GitHub Pages.
+# Gunjan Joshi — GitHub Pages Site (Full Profile)
 
 ## Included
 - CV: `assets/GunjanJoshi_CV.pdf`
@@ -9,8 +7,8 @@ Static HTML site ready for GitHub Pages.
 
 ## Deploy
 1. Upload all files to your repo: `joshigunjan/joshigunjan.github.io` (root).
-2. GitHub → **Settings → Pages** → Source: **Deploy from a branch**
-3. Choose branch `main` and folder `/ (root)`.
+2. GitHub → Settings → Pages → Source: Deploy from a branch
+3. Branch: `main` (or `master`), Folder: `/ (root)`.
 
 ## Socials
 - Scholar: https://scholar.google.com/citations?user=6i-Npr0AAAAJ&hl=en
