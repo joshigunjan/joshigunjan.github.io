@@ -1,159 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gunjan Joshi</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: url('aerial-shot-swiss-alps.jpg') no-repeat center center/cover;
-      background-attachment: fixed;  /* Keep the background static while scrolling */
-      color: white;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-    }
-    header {
-      background: rgba(0,0,0,0.5);
-      padding: 60px 20px;
-      text-align: center;
-    }
-    nav {
-      background: rgba(0,0,0,0.7);
-      display: flex;
-      justify-content: center;
-      padding: 10px;
-      gap: 20px;
-    }
-    nav button {
-      background: none;
-      border: none;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      padding: 10px 20px;
-      font-size: 1em;
-    }
-    nav button.active {
-      border-bottom: 2px solid white;
-    }
-    .tabcontent {
-      display: none;
-      padding: 40px;
-      background: rgba(0,0,0,0.6);
-    }
-    .tabcontent.active {
-      display: block;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.7);
-    }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-    .subtitle {
-      font-size: 1.5em;
-      font-style: italic;
-    }
-    .links a {
-      margin: 0 10px;
-      color: white;
-    }
-   @keyframes fadeZoomIn {
-  0% {
-    opacity: 0;
-    transform: scale(1.05);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-body {
-  animation: fadeZoomIn 1.5s ease-out;
-}
-
-.intro-text {
-  font-size: 1.2em;
-  margin-top: 10px;
-  color: white;
-  opacity: 0;
-  animation: fadeZoomIn 2s ease-out forwards;
-  animation-delay: 1s; /* Delay to make it appear after the name */
-}
-
-
-  </style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Home · Gunjan Joshi</title>
+  <meta name="description" content="Gunjan Joshi — Machine-Learning Scientist (Earth Observation, Explainable AI)."/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body>
- <header>
-  <h1>Gunjan Joshi</h1>
-  <div class="intro-text">Researcher | Earth Observation Enthusiast | AI for Geoscience | Remote Sensing</div>
-  <div class="subtitle">Remotely exploring the Earth, one pixel at a time 🛰🌍</div>
-  
-</header>
+  <div class="container">
+    <div class="layout">
+      <aside class="sidebar">
+  <div class="side-top">
+    <img class="avatar" src="assets/img/profile.svg" alt="Gunjan Joshi profile"/>
+    <h2 class="name">Gunjan Joshi</h2>
+    <p class="tagline">Machine-Learning Scientist · Earth Observation · Explainable AI</p>
 
-  <nav>
-    <button class="tablink active" onclick="openTab(event, 'about')">About Me</button>
-    <button class="tablink" onclick="openTab(event, 'research')">Research</button>
-    <button class="tablink" onclick="openTab(event, 'volunteering')">Volunteering</button>
+    <div class="badges">
+      <span class="badge">Remote sensing</span>
+      <span class="badge">Multimodal fusion</span>
+      <span class="badge">Foundation models</span>
+      <span class="badge">Cryosphere</span>
+    </div>
+  </div>
+
+  <nav class="nav" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="gallery.html">Gallery</a>
   </nav>
 
-  <div id="about" class="tabcontent active">
-    <h2>About Me</h2>
-    <p>I specialize in remote sensing with expertise in fusing synthetic aperture radar (SAR) and multispectral optical data using explainable neural networks for disaster management and cryosphere monitoring.</p>
+  <div class="side-links">
+    <a class="icon-btn" href="assets/GunjanJoshi_CV_Feb2026.pdf" target="_blank" rel="noopener">
+      <span>CV</span>
+    </a>
+    <a class="icon-btn" href="mailto:YOUR.EMAIL@domain.com">
+      <span>Email</span>
+    </a>
+    <a class="icon-btn" href="https://scholar.google.com/" target="_blank" rel="noopener">
+      <span>Scholar</span>
+    </a>
+    <a class="icon-btn" href="https://github.com/joshigunjan" target="_blank" rel="noopener">
+      <span>GitHub</span>
+    </a>
+    <a class="icon-btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">
+      <span>LinkedIn</span>
+    </a>
   </div>
-
-  <div id="research" class="tabcontent">
-    <h2>🎓 Academic Background</h2>
-    <ul>
-      <li>Ph.D. in Electrical Engineering and Information Systems, University of Tokyo (2024)</li>
-      <li>M.Eng. in Electrical Engineering and Information Systems, University of Tokyo (2021)</li>
-      <li>B.Eng. in Electronics and Communication Engineering, Visvesvaraya Technological University, India (2016)</li>
-    </ul>
-    <h2>🏆 Achievements</h2>
-    <ul>
-      <li>Recipient of the Japanese Government MEXT Scholarship (2018)</li>
-      <li>Awarded the Japan Society of Photogrammetry and Remote Sensing (JSPRS) Award (2021)</li>
-      <li>Winner of the IEEE GRSS Excellence in Technical Communication Student Prize Award (2022)</li>
-    </ul>
+</aside>
+      <main class="main">
+        <header class="header">
+  <h1>Hi, I’m Gunjan.</h1>
+  <p>
+    I work on <strong>machine learning for Earth observation</strong>, with a focus on explainable neural networks,
+    multi-sensor fusion (SAR + optical), and multimodal foundation models for geoscience.
+  </p>
+  <div class="actions">
+    <a class="btn primary" href="assets/GunjanJoshi_CV_Feb2026.pdf" target="_blank" rel="noopener">Download CV</a>
+    <a class="btn" href="research.html">View publications</a>
+    <a class="btn" href="about.html">About & experience</a>
   </div>
+</header>
 
-  <div id="volunteering" class="tabcontent">
-    <h2>🌐 Professional Involvement</h2>
-    <p>Webinar Strategist and Social Media Co-lead for the IEEE Geoscience and Remote Sensing Society (GRSS), driving educational outreach and engagement.</p>
-  </div>
-
-  <footer>
-    <div class="links">
-     
-      <a href="https://twitter.com/gunjanjoshi882">Twitter</a>
-      <a href="https://www.linkedin.com/in/gunjan-joshi-phd-793603197/">LinkedIn</a>
-       <a href="https://github.com/joshigunjan">GitHub</a>
+<div class="content">
+  <section class="section">
+    <h2>Current role</h2>
+    <div class="card">
+      <div class="kicker">Oct 2024 → Present</div>
+      <div class="title"><strong>Machine-Learning Scientist</strong>, Helmholtz-Zentrum Dresden-Rossendorf (Germany)</div>
+      <div class="meta">Project: 3D-ABC Foundation Model for global 3D above/below-ground carbon stocks.</div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    function openTab(evt, tabName) {
-      const tabcontents = document.querySelectorAll('.tabcontent');
-      const tablinks = document.querySelectorAll('.tablink');
+  <section class="section">
+    <h2>Research interests</h2>
+    <ul>
+      <li>Explainable AI for remote sensing (inverse mapping, confidence-aware explanations)</li>
+      <li>Multi-sensor & multi-temporal fusion (SAR + multispectral optical)</li>
+      <li>Cryosphere monitoring and glacier surface classification</li>
+      <li>Multimodal foundation models for large-scale geospatial analytics</li>
+    </ul>
+  </section>
 
-      tabcontents.forEach((content) => {
-        content.classList.remove('active');
-      });
+  <section class="section">
+    <h2>Highlights</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="kicker">Award</div>
+        <div class="title"><strong>First Prize</strong>, IEEE IGARSS 3MT Competition (2022)</div>
+        <div class="meta">Three Minutes Thesis (3MT) at IGARSS.</div>
+      </div>
+      <div class="card">
+        <div class="kicker">Teaching</div>
+        <div class="title"><strong>Course instructor</strong>, HIDA (2025)</div>
+        <div class="meta">Introduction to Machine Learning and Introduction to Deep Learning.</div>
+      </div>
+      <div class="card">
+        <div class="kicker">Service</div>
+        <div class="title"><strong>Column Editor</strong>, IEEE GRSS Magazine (since 2025)</div>
+        <div class="meta">Editorial board and community engagement.</div>
+      </div>
+      <div class="card">
+        <div class="kicker">Talk</div>
+        <div class="title"><strong>Invited speaker</strong>, IEEE GRSS YP Summit (Dec 2025)</div>
+        <div class="meta">“Advancing Earth Observation with Foundation Models”.</div>
+      </div>
+    </div>
+  </section>
 
-      tablinks.forEach((link) => {
-        link.classList.remove('active');
-      });
-
-      document.getElementById(tabName).classList.add('active');
-      evt.currentTarget.classList.add('active');
-    }
-  </script>
+  <section class="section">
+    <h2>Quick links</h2>
+    <p>
+      Replace the placeholder links in <code>about.html</code> and the sidebar with your real
+      email, Google Scholar, ORCID, and social profiles.
+    </p>
+  </section>
+</div>
+        <div class="footer">
+          <span>© 2026 Gunjan Joshi</span>
+          <span>Built for GitHub Pages · Static HTML</span>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
-
