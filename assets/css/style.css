@@ -441,3 +441,77 @@ small{color:var(--muted)}
   color: var(--muted);
   font-size: 13px;
 }
+
+/* --- Home page creative blocks --- */
+.quote{
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.02);
+  border-radius: 16px;
+  padding: 14px 14px;
+  position: relative;
+  overflow:hidden;
+}
+.quote:before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: radial-gradient(600px 220px at 10% 20%, rgba(122,162,255,.16), transparent 55%),
+              radial-gradient(600px 220px at 90% 80%, rgba(94,234,212,.12), transparent 60%);
+  opacity: .9;
+  pointer-events:none;
+}
+.quote > *{position:relative}
+.quote .q{
+  margin:0;
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 700;
+}
+.quote .sub{
+  margin: 6px 0 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.kpi{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+@media (max-width: 900px){
+  .kpi{grid-template-columns: 1fr}
+}
+.kpi .pill{
+  padding: 14px 14px;
+}
+.kpi .num{
+  margin:0;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing:.2px;
+}
+.kpi .lbl{
+  margin: 4px 0 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* --- What I'm building diagram --- */
+.diagram-wrap{
+  margin: 12px 0 16px 0;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.02);
+  border-radius: 16px;
+  overflow:hidden;
+}
+.diagram-wrap img{
+  display:block;
+  width: 100%;
+  height: auto;
+}
+.diagram-cap{
+  padding: 10px 12px 12px 12px;
+  color: var(--muted);
+  font-size: 13px;
+  border-top: 1px solid var(--border);
+}

@@ -1,4 +1,5 @@
-# Gunjan Joshi — GitHub Pages Site 
+# Gunjan Joshi — GitHub Pages Site (Narayana-like resume layout)
+
 ## Pages
 - `index.html` (Home)
 - `resume.html` (Resume layout like the screenshot)
