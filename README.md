@@ -1,18 +1,14 @@
-# Gunjan Joshi — GitHub Pages Site (Narayana-like resume layout)
+# Gunjan Joshi — GitHub Pages Site (Full Profile)
 
-## Pages
-- `index.html` (Home)
-- `resume.html` (Resume layout like the screenshot)
-- `research.html` (Selected publications + filters)
-
-## Included assets
+## Included
 - CV: `assets/GunjanJoshi_CV.pdf`
 - Profile photo: `assets/img/Gunjan-Joshi-2.png`
 - Background: `assets/img/aerial-shot-swiss-alps.jpg`
 
 ## Deploy
-Upload all files to your repo `joshigunjan/joshigunjan.github.io` (root), then enable GitHub Pages:
-Settings → Pages → Deploy from a branch → `main` → `/ (root)`.
+1. Upload all files to your repo: `joshigunjan/joshigunjan.github.io` (root).
+2. GitHub → Settings → Pages → Source: Deploy from a branch
+3. Branch: `main` (or `master`), Folder: `/ (root)`.
 
 ## Socials
 - Scholar: https://scholar.google.com/citations?user=6i-Npr0AAAAJ&hl=en
