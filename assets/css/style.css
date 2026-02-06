@@ -520,3 +520,19 @@ small{color:var(--muted)}
 /* Highlight my name in author lists */
 .me{ color: var(--accent2); font-weight: 900; }
 .pub-authors{ margin:0 0 6px 0; font-size: 13px; color: var(--muted); }
+
+
+/* Small secondary links for publications (e.g., Scholar) */
+.pub-mini-sep{ color: var(--muted); font-weight: 600; }
+.pub-mini{
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent2);
+  text-decoration: none;
+  border: 1px solid rgba(231,236,255,0.14);
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-left: 6px;
+  background: rgba(255,255,255,0.02);
+}
+.pub-mini:hover{ text-decoration: underline; }
