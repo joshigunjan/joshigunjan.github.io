@@ -9,14 +9,16 @@
   if(filterWrap){
     const chips = [...filterWrap.querySelectorAll("[data-filter]")];
     const pubs = [...document.querySelectorAll("[data-pub]")];
+
     const apply = (type)=>{
       chips.forEach(c=>c.classList.toggle("active", c.dataset.filter === type));
       pubs.forEach(p=>{
-        const t = p.dataset.pub;
-        const show = (type === "all") || (t === type);
+        const tags = (p.dataset.pub || "").split(/\s+/).filter(Boolean);  // NEW
+        const show = (type === "all") || tags.includes(type);             // NEW
         p.style.display = show ? "" : "none";
       });
     };
+
     chips.forEach(c=>c.addEventListener("click", ()=>apply(c.dataset.filter)));
     apply("all");
   }
