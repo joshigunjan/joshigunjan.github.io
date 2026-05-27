@@ -25,13 +25,16 @@
 
   <style>
     :root{
-      --bg:#050607;
-      --text:#f4f7fb;
-      --muted:#aeb8c9;
-      --accent:#2ee59d;
-      --accent-soft:rgba(46,229,157,.16);
-      --line:rgba(255,255,255,.11);
-      --panel:rgba(255,255,255,.045);
+      --bg:#f6f8fb;
+      --panel:#ffffff;
+      --panel-soft:#f9fbff;
+      --text:#162033;
+      --muted:#5d6b82;
+      --accent:#0f766e;
+      --accent2:#2563eb;
+      --border:#dbe4f0;
+      --shadow:0 18px 50px rgba(22,32,51,.10);
+      --shadow-soft:0 8px 24px rgba(22,32,51,.08);
     }
 
     *{
@@ -48,23 +51,9 @@
       font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
       background:
-        radial-gradient(900px 600px at 78% 45%, rgba(46,229,157,.10), transparent 58%),
-        radial-gradient(700px 500px at 15% 20%, rgba(80,120,255,.10), transparent 62%),
-        linear-gradient(135deg, #030405 0%, #080b10 45%, #020303 100%);
-      overflow-x:hidden;
-    }
-
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      opacity:.18;
-      background-image:
-        linear-gradient(var(--line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--line) 1px, transparent 1px);
-      background-size:64px 64px;
-      mask-image:radial-gradient(circle at 55% 45%, black, transparent 72%);
+        radial-gradient(900px 520px at 8% 0%, rgba(37,99,235,.08), transparent 62%),
+        radial-gradient(850px 520px at 92% 12%, rgba(15,118,110,.10), transparent 62%),
+        var(--bg);
     }
 
     a{
@@ -74,15 +63,12 @@
 
     .page{
       min-height:100vh;
-      position:relative;
       display:flex;
       flex-direction:column;
     }
 
     .topbar{
-      position:relative;
-      z-index:5;
-      width:min(1200px, calc(100% - 48px));
+      width:min(1180px, calc(100% - 48px));
       margin:0 auto;
       padding:28px 0;
       display:flex;
@@ -96,7 +82,8 @@
       align-items:center;
       gap:10px;
       font-weight:900;
-      letter-spacing:.02em;
+      color:var(--text);
+      letter-spacing:.01em;
     }
 
     .brand-mark{
@@ -104,16 +91,16 @@
       height:12px;
       border-radius:999px;
       background:var(--accent);
-      box-shadow:0 0 0 8px var(--accent-soft);
+      box-shadow:0 0 0 7px rgba(15,118,110,.12);
     }
 
     .top-nav{
       display:flex;
       align-items:center;
-      gap:30px;
+      gap:28px;
       color:var(--muted);
       font-size:15px;
-      font-weight:700;
+      font-weight:750;
     }
 
     .top-nav a{
@@ -146,161 +133,136 @@
 
     .hero{
       flex:1;
-      position:relative;
-      z-index:2;
-      width:min(1200px, calc(100% - 48px));
+      width:min(1180px, calc(100% - 48px));
       margin:0 auto;
       display:grid;
-      grid-template-columns:minmax(0, 1.05fr) minmax(340px, .95fr);
+      grid-template-columns:minmax(0, 1.12fr) minmax(300px, .88fr);
       align-items:center;
-      gap:52px;
-      padding:60px 0 70px;
-    }
-
-    .hero-copy{
-      max-width:720px;
+      gap:72px;
+      padding:58px 0 68px;
     }
 
     .eyebrow{
       margin:0 0 18px 0;
       color:var(--accent);
       font-size:13px;
-      letter-spacing:.18em;
+      letter-spacing:.17em;
       text-transform:uppercase;
       font-weight:900;
     }
 
     h1{
       margin:0;
-      font-size:clamp(54px, 8vw, 104px);
-      line-height:.95;
-      letter-spacing:-.06em;
+      max-width:760px;
+      color:var(--text);
+      font-size:clamp(58px, 8vw, 108px);
+      line-height:.96;
+      letter-spacing:-.07em;
       font-weight:950;
     }
 
-    h1 span{
-      color:var(--accent);
-    }
-
-    .subtitle{
-      margin:24px 0 0 0;
+    .role{
+      margin:28px 0 0 0;
       color:var(--text);
-      font-size:clamp(24px, 3vw, 38px);
+      font-size:clamp(25px, 3vw, 38px);
       line-height:1.18;
-      font-weight:800;
-      letter-spacing:-.025em;
+      font-weight:850;
+      letter-spacing:-.035em;
     }
 
-    .subtitle em{
+    .role span{
       color:var(--accent);
-      font-style:normal;
     }
 
-    .one-line{
-      margin:18px 0 0 0;
-      max-width:620px;
+    .intro{
+      margin:20px 0 0 0;
+      max-width:640px;
       color:var(--muted);
       font-size:19px;
-      line-height:1.65;
+      line-height:1.7;
+    }
+
+    .research-line{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:28px;
+    }
+
+    .research-line span{
+      padding:8px 12px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:var(--panel);
+      color:#24405f;
+      font-size:13px;
+      font-weight:800;
+      box-shadow:var(--shadow-soft);
     }
 
     .hero-links{
       display:flex;
       align-items:center;
       flex-wrap:wrap;
-      gap:14px;
+      gap:12px;
       margin-top:34px;
     }
 
     .icon-link{
-      width:48px;
-      height:48px;
+      width:46px;
+      height:46px;
       border-radius:999px;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.06);
-      color:var(--text);
+      border:1px solid var(--border);
+      background:var(--panel);
+      color:var(--muted);
       font-size:18px;
-      transition:transform .18s ease, background .18s ease, border-color .18s ease;
+      box-shadow:var(--shadow-soft);
+      transition:transform .18s ease, color .18s ease, background .18s ease, border-color .18s ease;
     }
 
     .icon-link:hover{
       transform:translateY(-3px);
-      border-color:rgba(46,229,157,.52);
-      background:rgba(46,229,157,.14);
       color:var(--accent);
+      border-color:#b7d8d0;
+      background:#eefaf7;
     }
 
-    .hero-photo-wrap{
-      position:relative;
+    .photo-panel{
       justify-self:end;
-      width:min(430px, 100%);
+      width:min(390px, 100%);
+      padding:14px;
+      border:1px solid var(--border);
+      border-radius:32px;
+      background:var(--panel);
+      box-shadow:var(--shadow);
     }
 
-    .hero-photo-wrap::before{
-      content:"";
-      position:absolute;
-      inset:-28px;
-      border-radius:40px;
-      background:
-        radial-gradient(circle at 30% 20%, rgba(46,229,157,.20), transparent 35%),
-        radial-gradient(circle at 80% 80%, rgba(80,120,255,.18), transparent 42%);
-      filter:blur(4px);
-      opacity:.9;
-      z-index:-1;
-    }
-
-    .hero-photo{
+    .photo-panel img{
       width:100%;
       display:block;
-      border-radius:34px;
-      border:1px solid rgba(255,255,255,.13);
-      background:rgba(255,255,255,.04);
-      filter:grayscale(.10) contrast(1.04);
-      box-shadow:0 30px 90px rgba(0,0,0,.55);
+      border-radius:24px;
+      border:1px solid var(--border);
+      background:var(--panel-soft);
     }
 
-    .photo-caption{
-      margin:16px 0 0 0;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.5;
-      text-align:right;
-    }
-
-    .bottom-strip{
-      position:relative;
-      z-index:3;
-      width:min(1200px, calc(100% - 48px));
+    .footer{
+      width:min(1180px, calc(100% - 48px));
       margin:0 auto;
-      padding:0 0 32px;
+      padding:20px 0 28px;
+      border-top:1px solid var(--border);
       display:flex;
-      align-items:flex-end;
       justify-content:space-between;
-      gap:24px;
+      align-items:center;
+      gap:20px;
       color:var(--muted);
       font-size:13px;
     }
 
-    .mini-tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
-    .mini-tags span{
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      color:var(--muted);
-      font-weight:700;
-    }
-
     .visitor-counter{
-      max-width:260px;
+      max-width:240px;
       opacity:.72;
       transition:opacity .18s ease;
     }
@@ -314,7 +276,7 @@
       max-width:100%;
       height:auto;
       border:0;
-      border-radius:10px;
+      border-radius:8px;
     }
 
     .sr-only{
@@ -336,25 +298,22 @@
       }
 
       .top-nav{
-        gap:18px;
         flex-wrap:wrap;
+        gap:18px;
       }
 
       .hero{
         grid-template-columns:1fr;
-        padding:36px 0 46px;
+        gap:42px;
+        padding:36px 0 54px;
       }
 
-      .hero-photo-wrap{
+      .photo-panel{
         justify-self:start;
-        max-width:360px;
+        max-width:340px;
       }
 
-      .photo-caption{
-        text-align:left;
-      }
-
-      .bottom-strip{
+      .footer{
         flex-direction:column;
         align-items:flex-start;
       }
@@ -363,21 +322,24 @@
     @media (max-width:560px){
       .topbar,
       .hero,
-      .bottom-strip{
-        width:min(100% - 32px, 1200px);
+      .footer{
+        width:min(100% - 32px, 1180px);
+      }
+
+      h1{
+        font-size:56px;
+      }
+
+      .role{
+        font-size:27px;
+      }
+
+      .intro{
+        font-size:17px;
       }
 
       .top-nav{
         font-size:14px;
-      }
-
-      .hero-links{
-        gap:10px;
-      }
-
-      .icon-link{
-        width:44px;
-        height:44px;
       }
     }
   </style>
@@ -401,20 +363,28 @@
     </header>
 
     <main class="hero">
-      <section class="hero-copy">
+      <section>
         <p class="eyebrow">Explainable AI · Earth Observation · Foundation Models</p>
 
-        <h1><span>G.</span> Joshi</h1>
+        <h1>Gunjan Joshi</h1>
 
-        <p class="subtitle">
+        <p class="role">
           Machine-Learning Scientist<br/>
-          <em>for interpretable Earth observation.</em>
+          <span>Explainable AI for Earth observation.</span>
         </p>
 
-        <p class="one-line">
-          I work on explainable and multimodal AI for remote sensing, with a focus on SAR/optical fusion,
+        <p class="intro">
+          I work on interpretable and multimodal machine learning for remote sensing, with a focus on SAR/optical fusion,
           cryosphere monitoring, geospatial foundation models, and trustworthy Earth observation datasets.
         </p>
+
+        <div class="research-line" aria-label="Research keywords">
+          <span>Explainable AI</span>
+          <span>SAR + optical fusion</span>
+          <span>Cryosphere</span>
+          <span>3D-ABC</span>
+          <span>Metadata</span>
+        </div>
 
         <div class="hero-links" aria-label="External profiles">
           <a class="icon-link" href="https://scholar.google.com/citations?user=6i-Npr0AAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
@@ -444,27 +414,18 @@
         </div>
       </section>
 
-      <aside class="hero-photo-wrap" aria-label="Profile image">
-        <img class="hero-photo" src="assets/img/Gunjan-Joshi-2.png" alt="Gunjan Joshi profile photo"/>
-        <p class="photo-caption">
-          Machine-Learning Scientist at Helmholtz-Zentrum Dresden-Rossendorf.
-        </p>
+      <aside class="photo-panel" aria-label="Profile image">
+        <img src="assets/img/Gunjan-Joshi-2.png" alt="Gunjan Joshi profile photo"/>
       </aside>
     </main>
 
-    <footer class="bottom-strip">
-      <div class="mini-tags" aria-label="Research keywords">
-        <span>Explainable AI</span>
-        <span>SAR + optical fusion</span>
-        <span>Cryosphere</span>
-        <span>3D-ABC</span>
-        <span>Metadata</span>
-      </div>
+    <footer class="footer">
+      <span>© 2026 Gunjan Joshi</span>
 
       <div class="visitor-counter" aria-label="Visitor counter">
         <a href="https://info.flagcounter.com/4ujz" target="_blank" rel="noopener">
           <img
-            src="https://s05.flagcounter.com/count2/4ujz/bg_050607/txt_AEB8C9/border_050607/columns_4/maxflags_20/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+            src="https://s05.flagcounter.com/count2/4ujz/bg_F6F8FB/txt_5D6B82/border_F6F8FB/columns_4/maxflags_20/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
             alt="Flag Counter"
           >
         </a>
