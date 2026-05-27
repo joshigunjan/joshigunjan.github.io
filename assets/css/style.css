@@ -723,23 +723,20 @@ main.page > section.hero h1{
 }
 /* ---------- About page without profile photo ---------- */
 
-.about-hero{
+main.page > section.hero.about-hero{
   align-items:flex-start;
 }
 
-.about-hero > div{
+main.page > section.hero.about-hero > div{
   width:100%;
   max-width:none;
 }
 
-.about-hero h1{
+main.page > section.hero.about-hero h1{
   max-width:none;
   width:100%;
 }
 
-.about-hero .lead{
+main.page > section.hero.about-hero .lead{
   max-width:1180px;
-}
-.about-hero .lead{
-  max-width:980px;
 }
