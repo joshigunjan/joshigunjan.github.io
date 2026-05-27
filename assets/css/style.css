@@ -728,9 +728,18 @@ main.page > section.hero h1{
 }
 
 .about-hero > div{
-  max-width:1040px;
+  width:100%;
+  max-width:none;
 }
 
+.about-hero h1{
+  max-width:none;
+  width:100%;
+}
+
+.about-hero .lead{
+  max-width:1180px;
+}
 .about-hero .lead{
   max-width:980px;
 }
