@@ -122,3 +122,22 @@ section.hero h1,
     font-size:15.5px;
   }
 }
+
+.section-intro{
+  margin:10px 0 0 0;
+  max-width:760px;
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.7;
+}
+
+.focus-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+  gap:16px;
+  margin-top:22px;
+}
+
+.focus-card .hint{
+  display:none;
+}
