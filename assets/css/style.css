@@ -526,6 +526,10 @@ main.page > section.hero.about-hero .lead{
   background:#0b1020;
 }
 
+.leaflet-interactive{
+  cursor:pointer;
+}
+
 .leaflet-control-zoom a,
 .leaflet-control-attribution{
   background:rgba(10,12,22,.86) !important;
