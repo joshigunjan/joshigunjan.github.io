@@ -9,12 +9,12 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://joshigunjan.github.io/research.html">
   <meta property="og:title" content="Research · Gunjan Joshi">
-  <meta property="og:description" content="Selected publications on explainable AI, SAR/optical fusion, cryosphere monitoring, metadata, and geospatial foundation models.">
+  <meta property="og:description" content="Publications and research outputs on explainable AI, SAR/optical fusion, cryosphere monitoring, metadata, and geospatial foundation models.">
   <meta property="og:image" content="https://joshigunjan.github.io/assets/img/og-card.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Research · Gunjan Joshi">
-  <meta name="twitter:description" content="Selected publications on explainable AI, SAR/optical fusion, cryosphere monitoring, metadata, and geospatial foundation models.">
+  <meta name="twitter:description" content="Publications and research outputs on explainable AI, SAR/optical fusion, cryosphere monitoring, metadata, and geospatial foundation models.">
   <meta name="twitter:image" content="https://joshigunjan.github.io/assets/img/og-card.png">
   <meta name="twitter:site" content="@gunjanjoshi882">
 
@@ -170,7 +170,7 @@
 
     .lead{
       margin:14px 0 0 0;
-      max-width:760px;
+      max-width:780px;
       color:var(--muted);
       font-size:17px;
       line-height:1.65;
@@ -508,13 +508,13 @@
       <p class="eyebrow">Research</p>
       <h1>Research &amp; Publications</h1>
       <p class="lead">
-        Selected publications and research outputs on explainable AI, SAR and optical data fusion,
-        cryosphere monitoring, geospatial foundation models, metadata, and open science.
+        Browse my journal papers, conference papers, columns, datasets, and research outputs
+        by publication type or research theme.
       </p>
 
       <div class="filter-panel">
         <div class="filter-row" data-type-filters>
-          <span class="filter-label">Article type</span>
+          <span class="filter-label">Filter by type</span>
           <span class="chip active" data-type-filter="all">All</span>
           <span class="chip" data-type-filter="journal">Journals</span>
           <span class="chip" data-type-filter="conference">Conferences</span>
@@ -524,7 +524,7 @@
         </div>
 
         <div class="filter-row" data-theme-filters>
-          <span class="filter-label">Research theme</span>
+          <span class="filter-label">Filter by theme</span>
           <span class="chip active" data-theme-filter="all">All themes</span>
           <span class="chip" data-theme-filter="xai">XAI</span>
           <span class="chip" data-theme-filter="foundation">Foundation models</span>
@@ -778,7 +778,7 @@
           <div class="pub-tags">
             <span class="pub-tag">Conference</span>
             <span class="pub-tag">XAI</span>
-            <span class="pub-tag">Cryosphere</span>
+            <span class="pub-tag">Glacier / LULC</span>
             <a class="pub-link" href="https://doi.org/10.1109/IGARSS52108.2023.10281784" target="_blank" rel="noopener">DOI</a>
           </div>
         </article>
@@ -972,6 +972,19 @@
     let activeType = "all";
     let activeTheme = "all";
 
+    const params = new URLSearchParams(window.location.search);
+    const requestedTheme = params.get("theme");
+
+    if (requestedTheme) {
+      const requestedChip = document.querySelector(`[data-theme-filter="${requestedTheme}"]`);
+
+      if (requestedChip) {
+        themeChips.forEach((item) => item.classList.remove("active"));
+        requestedChip.classList.add("active");
+        activeTheme = requestedTheme;
+      }
+    }
+
     function applyFilters() {
       pubs.forEach((pub) => {
         const types = (pub.dataset.type || "").split(" ");
@@ -1020,6 +1033,8 @@
 
       tagContainer.appendChild(scholarLink);
     });
+
+    applyFilters();
   </script>
 </body>
 </html>
