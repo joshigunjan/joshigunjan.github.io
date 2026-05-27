@@ -740,3 +740,37 @@ main.page > section.hero.about-hero h1{
 main.page > section.hero.about-hero .lead{
   max-width:1180px;
 }
+
+
+
+/* ---------- Research theme card icons ---------- */
+
+.theme-icon{
+  width:48px;
+  height:48px;
+  margin-bottom:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:16px;
+  border:1px solid rgba(94,234,212,.32);
+  background:
+    radial-gradient(circle at 30% 20%, rgba(94,234,212,.22), transparent 55%),
+    rgba(94,234,212,.08);
+  color:var(--accent2);
+  font-size:21px;
+  box-shadow:0 12px 30px rgba(0,0,0,.22);
+  transition:transform .16s ease, border-color .16s ease, background .16s ease;
+}
+
+.focus-card:hover .theme-icon{
+  transform:translateY(-2px);
+  border-color:rgba(94,234,212,.55);
+  background:
+    radial-gradient(circle at 30% 20%, rgba(94,234,212,.30), transparent 55%),
+    rgba(94,234,212,.12);
+}
+
+.focus-card h3{
+  margin-top:0;
+}
