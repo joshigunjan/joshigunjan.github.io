@@ -25,16 +25,15 @@
 
   <style>
     :root{
-      --bg:#f6f8fb;
-      --panel:#ffffff;
-      --panel-soft:#f9fbff;
-      --text:#162033;
-      --muted:#5d6b82;
-      --accent:#0f766e;
-      --accent2:#2563eb;
-      --border:#dbe4f0;
-      --shadow:0 18px 50px rgba(22,32,51,.10);
-      --shadow-soft:0 8px 24px rgba(22,32,51,.08);
+      --bg:#0b1020;
+      --text:#e7ecff;
+      --muted:#aab5dd;
+      --accent:#7aa2ff;
+      --accent2:#5eead4;
+      --panel:rgba(10,12,22,.66);
+      --panel-soft:rgba(255,255,255,.045);
+      --border:rgba(231,236,255,.12);
+      --shadow:0 24px 80px rgba(0,0,0,.48);
     }
 
     *{
@@ -51,9 +50,14 @@
       font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
       background:
-        radial-gradient(900px 520px at 8% 0%, rgba(37,99,235,.08), transparent 62%),
-        radial-gradient(850px 520px at 92% 12%, rgba(15,118,110,.10), transparent 62%),
-        var(--bg);
+        radial-gradient(1000px 700px at 15% 10%, rgba(122,162,255,.18), transparent 58%),
+        radial-gradient(950px 680px at 85% 22%, rgba(94,234,212,.13), transparent 58%),
+        linear-gradient(rgba(5,7,15,.78), rgba(5,7,15,.84)),
+        url("assets/img/aerial-shot-swiss-alps.jpg");
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+      overflow-x:hidden;
     }
 
     a{
@@ -68,21 +72,23 @@
     }
 
     .topbar{
-      width:min(1180px, calc(100% - 48px));
+      width:min(1220px, calc(100% - 56px));
       margin:0 auto;
-      padding:28px 0;
+      padding:30px 0;
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:24px;
+      position:relative;
+      z-index:3;
     }
 
     .brand{
       display:flex;
       align-items:center;
       gap:10px;
-      font-weight:900;
       color:var(--text);
+      font-weight:900;
       letter-spacing:.01em;
     }
 
@@ -90,8 +96,8 @@
       width:12px;
       height:12px;
       border-radius:999px;
-      background:var(--accent);
-      box-shadow:0 0 0 7px rgba(15,118,110,.12);
+      background:var(--accent2);
+      box-shadow:0 0 0 7px rgba(94,234,212,.12);
     }
 
     .top-nav{
@@ -115,7 +121,7 @@
       right:0;
       bottom:0;
       height:2px;
-      background:var(--accent);
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
       transform:scaleX(0);
       transform-origin:left;
       transition:transform .18s ease;
@@ -133,30 +139,36 @@
 
     .hero{
       flex:1;
-      width:min(1180px, calc(100% - 48px));
+      width:min(1220px, calc(100% - 56px));
       margin:0 auto;
       display:grid;
-      grid-template-columns:minmax(0, 1.12fr) minmax(300px, .88fr);
+      grid-template-columns:minmax(0, 1.08fr) minmax(320px, .92fr);
       align-items:center;
-      gap:72px;
-      padding:58px 0 68px;
+      gap:76px;
+      padding:54px 0 72px;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-copy{
+      max-width:760px;
     }
 
     .eyebrow{
       margin:0 0 18px 0;
-      color:var(--accent);
+      color:var(--accent2);
       font-size:13px;
-      letter-spacing:.17em;
+      letter-spacing:.18em;
       text-transform:uppercase;
-      font-weight:900;
+      font-weight:950;
     }
 
     h1{
       margin:0;
-      max-width:760px;
+      max-width:850px;
       color:var(--text);
-      font-size:clamp(58px, 8vw, 108px);
-      line-height:.96;
+      font-size:clamp(58px, 8vw, 112px);
+      line-height:.95;
       letter-spacing:-.07em;
       font-weight:950;
     }
@@ -164,40 +176,40 @@
     .role{
       margin:28px 0 0 0;
       color:var(--text);
-      font-size:clamp(25px, 3vw, 38px);
+      font-size:clamp(26px, 3vw, 40px);
       line-height:1.18;
       font-weight:850;
-      letter-spacing:-.035em;
+      letter-spacing:-.04em;
     }
 
     .role span{
-      color:var(--accent);
+      color:var(--accent2);
     }
 
     .intro{
       margin:20px 0 0 0;
-      max-width:640px;
+      max-width:650px;
       color:var(--muted);
       font-size:19px;
-      line-height:1.7;
+      line-height:1.72;
     }
 
     .research-line{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
-      margin-top:28px;
+      margin-top:30px;
     }
 
     .research-line span{
       padding:8px 12px;
       border:1px solid var(--border);
       border-radius:999px;
-      background:var(--panel);
-      color:#24405f;
+      background:rgba(255,255,255,.045);
+      color:var(--muted);
       font-size:13px;
       font-weight:800;
-      box-shadow:var(--shadow-soft);
+      backdrop-filter:blur(8px);
     }
 
     .hero-links{
@@ -216,18 +228,19 @@
       align-items:center;
       justify-content:center;
       border:1px solid var(--border);
-      background:var(--panel);
-      color:var(--muted);
+      background:rgba(255,255,255,.055);
+      color:var(--text);
       font-size:18px;
-      box-shadow:var(--shadow-soft);
+      box-shadow:0 12px 34px rgba(0,0,0,.24);
+      backdrop-filter:blur(10px);
       transition:transform .18s ease, color .18s ease, background .18s ease, border-color .18s ease;
     }
 
     .icon-link:hover{
       transform:translateY(-3px);
-      color:var(--accent);
-      border-color:#b7d8d0;
-      background:#eefaf7;
+      color:var(--accent2);
+      border-color:rgba(94,234,212,.45);
+      background:rgba(94,234,212,.10);
     }
 
     .photo-panel{
@@ -236,8 +249,9 @@
       padding:14px;
       border:1px solid var(--border);
       border-radius:32px;
-      background:var(--panel);
+      background:rgba(10,12,22,.58);
       box-shadow:var(--shadow);
+      backdrop-filter:blur(12px);
     }
 
     .photo-panel img{
@@ -245,25 +259,26 @@
       display:block;
       border-radius:24px;
       border:1px solid var(--border);
-      background:var(--panel-soft);
+      background:rgba(255,255,255,.04);
     }
 
     .footer{
-      width:min(1180px, calc(100% - 48px));
+      width:min(1220px, calc(100% - 56px));
       margin:0 auto;
-      padding:20px 0 28px;
-      border-top:1px solid var(--border);
+      padding:20px 0 30px;
       display:flex;
       justify-content:space-between;
       align-items:center;
       gap:20px;
-      color:var(--muted);
+      color:rgba(170,181,221,.78);
       font-size:13px;
+      position:relative;
+      z-index:2;
     }
 
     .visitor-counter{
-      max-width:240px;
-      opacity:.72;
+      max-width:235px;
+      opacity:.66;
       transition:opacity .18s ease;
     }
 
@@ -292,6 +307,10 @@
     }
 
     @media (max-width:900px){
+      body{
+        background-attachment:scroll;
+      }
+
       .topbar{
         align-items:flex-start;
         flex-direction:column;
@@ -323,11 +342,11 @@
       .topbar,
       .hero,
       .footer{
-        width:min(100% - 32px, 1180px);
+        width:min(100% - 32px, 1220px);
       }
 
       h1{
-        font-size:56px;
+        font-size:54px;
       }
 
       .role{
@@ -363,7 +382,7 @@
     </header>
 
     <main class="hero">
-      <section>
+      <section class="hero-copy">
         <p class="eyebrow">Explainable AI · Earth Observation · Foundation Models</p>
 
         <h1>Gunjan Joshi</h1>
@@ -425,7 +444,7 @@
       <div class="visitor-counter" aria-label="Visitor counter">
         <a href="https://info.flagcounter.com/4ujz" target="_blank" rel="noopener">
           <img
-            src="https://s05.flagcounter.com/count2/4ujz/bg_F6F8FB/txt_5D6B82/border_F6F8FB/columns_4/maxflags_20/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+            src="https://s05.flagcounter.com/count2/4ujz/bg_0B1020/txt_AAB5DD/border_0B1020/columns_4/maxflags_20/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
             alt="Flag Counter"
           >
         </a>
