@@ -3,22 +3,416 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
   <title>Gunjan Joshi</title>
   <meta name="description" content="Gunjan Joshi — Machine-Learning Scientist working on explainable AI for Earth observation."/>
 
-  <meta http-equiv="refresh" content="0; url=home.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://joshigunjan.github.io/">
+  <meta property="og:title" content="Gunjan Joshi">
+  <meta property="og:description" content="Machine-Learning Scientist working on explainable AI, remote sensing, and geospatial foundation models.">
+  <meta property="og:image" content="https://joshigunjan.github.io/assets/img/og-card.png">
 
-  <link rel="canonical" href="https://joshigunjan.github.io/home.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gunjan Joshi">
+  <meta name="twitter:description" content="Explainable AI for Earth observation.">
+  <meta name="twitter:image" content="https://joshigunjan.github.io/assets/img/og-card.png">
+  <meta name="twitter:site" content="@gunjanjoshi882">
 
-  <script>
-    window.location.replace("home.html");
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <style>
+    :root{
+      --bg:#0b1020;
+      --text:#e7ecff;
+      --muted:#aab5dd;
+      --accent:#7aa2ff;
+      --accent2:#5eead4;
+      --panel:rgba(10,12,22,.66);
+      --border:rgba(231,236,255,.12);
+      --shadow:0 24px 80px rgba(0,0,0,.48);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:"Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 700px at 15% 10%, rgba(122,162,255,.18), transparent 58%),
+        radial-gradient(950px 680px at 85% 22%, rgba(94,234,212,.13), transparent 58%),
+        linear-gradient(rgba(5,7,15,.76), rgba(5,7,15,.86)),
+        url("assets/img/aerial-shot-swiss-alps.jpg");
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+      overflow-x:hidden;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .page{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .topbar{
+      width:min(1220px, calc(100% - 56px));
+      margin:0 auto;
+      padding:30px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      position:relative;
+      z-index:3;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--text);
+      font-weight:900;
+      letter-spacing:.01em;
+    }
+
+    .brand-mark{
+      width:12px;
+      height:12px;
+      border-radius:999px;
+      background:var(--accent2);
+      box-shadow:0 0 0 7px rgba(94,234,212,.12);
+    }
+
+    .top-nav{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      color:var(--muted);
+      font-size:15px;
+      font-weight:750;
+    }
+
+    .top-nav a{
+      position:relative;
+      padding:8px 0;
+    }
+
+    .top-nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      height:2px;
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform .18s ease;
+    }
+
+    .top-nav a:hover,
+    .top-nav a.active{
+      color:var(--text);
+    }
+
+    .top-nav a:hover::after,
+    .top-nav a.active::after{
+      transform:scaleX(1);
+    }
+
+    .hero{
+      flex:1;
+      width:min(1220px, calc(100% - 56px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0, 1.08fr) minmax(300px, .84fr);
+      align-items:center;
+      gap:72px;
+      padding:44px 0 64px;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-copy{
+      max-width:760px;
+    }
+
+    h1{
+      margin:0;
+      max-width:850px;
+      color:var(--text);
+      font-family:"Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+      font-size:clamp(58px, 7.6vw, 104px);
+      line-height:.96;
+      letter-spacing:-.055em;
+      font-weight:800;
+    }
+
+    .role{
+      margin:26px 0 0 0;
+      color:var(--text);
+      font-size:clamp(26px, 3vw, 38px);
+      line-height:1.18;
+      font-weight:850;
+      letter-spacing:-.04em;
+    }
+
+    .role span{
+      color:var(--accent2);
+    }
+
+    .intro{
+      margin:20px 0 0 0;
+      max-width:650px;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.72;
+    }
+
+    .hero-links{
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:32px;
+    }
+
+    .icon-link{
+      width:46px;
+      height:46px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.055);
+      color:var(--text);
+      font-size:18px;
+      box-shadow:0 12px 34px rgba(0,0,0,.24);
+      backdrop-filter:blur(10px);
+      transition:transform .18s ease, color .18s ease, background .18s ease, border-color .18s ease;
+    }
+
+    .icon-link:hover{
+      transform:translateY(-3px);
+      color:var(--accent2);
+      border-color:rgba(94,234,212,.45);
+      background:rgba(94,234,212,.10);
+    }
+
+    .photo-panel{
+      justify-self:end;
+      width:min(360px, 100%);
+      padding:13px;
+      border:1px solid var(--border);
+      border-radius:30px;
+      background:rgba(10,12,22,.58);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(12px);
+    }
+
+    .photo-panel img{
+      width:100%;
+      display:block;
+      border-radius:22px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+    }
+
+    .footer{
+      width:min(1220px, calc(100% - 56px));
+      margin:0 auto;
+      padding:18px 0 30px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      color:rgba(170,181,221,.72);
+      font-size:13px;
+      position:relative;
+      z-index:2;
+    }
+
+    .visitor-counter{
+      max-width:220px;
+      opacity:.52;
+      transition:opacity .18s ease;
+    }
+
+    .visitor-counter:hover{
+      opacity:.9;
+    }
+
+    .visitor-counter img{
+      display:block;
+      max-width:100%;
+      height:auto;
+      border:0;
+      border-radius:8px;
+    }
+
+    .sr-only{
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+      border:0;
+    }
+
+    @media (max-width:900px){
+      body{background-attachment:scroll}
+
+      .topbar{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .top-nav{
+        flex-wrap:wrap;
+        gap:18px;
+      }
+
+      .hero{
+        grid-template-columns:1fr;
+        gap:42px;
+        padding:36px 0 54px;
+      }
+
+      .photo-panel{
+        justify-self:start;
+        max-width:330px;
+      }
+
+      .footer{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+
+    @media (max-width:560px){
+      .topbar,
+      .hero,
+      .footer{
+        width:min(100% - 32px, 1220px);
+      }
+
+      h1{
+        font-size:54px;
+      }
+
+      .role{
+        font-size:27px;
+      }
+
+      .intro{
+        font-size:17px;
+      }
+
+      .top-nav{
+        font-size:14px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <p>
-    Redirecting to <a href="home.html">Gunjan Joshi — Home</a>.
-  </p>
+  <div class="page">
+
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Gunjan Joshi home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Gunjan Joshi</span>
+      </a>
+
+      <nav class="top-nav" aria-label="Primary">
+        <a class="active" href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="resume.html">Resume</a>
+        <a href="research.html">Research</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section class="hero-copy">
+        <h1>Gunjan Joshi</h1>
+
+        <p class="role">
+          Machine-Learning Scientist<br/>
+          <span>Explainable AI for Earth observation.</span>
+        </p>
+
+        <p class="intro">
+          I work at the intersection of machine learning, remote sensing, and explainability.
+          My research focuses on making Earth-observation AI systems more interpretable,
+          especially for SAR/optical fusion, glacier monitoring, disaster mapping, and
+          geospatial foundation models.
+        </p>
+
+        <div class="hero-links" aria-label="External profiles">
+          <a class="icon-link" href="https://scholar.google.com/citations?user=6i-Npr0AAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            <span class="sr-only">Google Scholar</span>
+          </a>
+
+          <a class="icon-link" href="https://orcid.org/0000-0001-6092-1408" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID">
+            <i class="fa-brands fa-orcid" aria-hidden="true"></i>
+            <span class="sr-only">ORCID</span>
+          </a>
+
+          <a class="icon-link" href="https://twitter.com/gunjanjoshi882" target="_blank" rel="noopener" aria-label="X / Twitter" title="X / Twitter">
+            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+            <span class="sr-only">X / Twitter</span>
+          </a>
+
+          <a class="icon-link" href="https://www.linkedin.com/in/gunjan-joshi-793603197/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span>
+          </a>
+
+          <a class="icon-link" href="https://github.com/joshigunjan" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span>
+          </a>
+        </div>
+      </section>
+
+      <aside class="photo-panel" aria-label="Profile image">
+        <img src="assets/img/Gunjan-Joshi-2.png" alt="Gunjan Joshi profile photo"/>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 Gunjan Joshi</span>
+
+      <div class="visitor-counter" aria-label="Visitor counter">
+        <a href="https://info.flagcounter.com/4ujz" target="_blank" rel="noopener">
+          <img
+            src="https://s05.flagcounter.com/count2/4ujz/bg_0B1020/txt_AAB5DD/border_0B1020/columns_4/maxflags_20/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+            alt="Flag Counter"
+          >
+        </a>
+      </div>
+    </footer>
+
+  </div>
 </body>
 </html>
