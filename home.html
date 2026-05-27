@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Home · Gunjan Joshi</title>
+  <meta name="description" content="Gunjan Joshi — Machine-Learning Scientist working on explainable AI for Earth observation."/>
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://joshigunjan.github.io/home.html">
+  <meta property="og:title" content="Gunjan Joshi">
+  <meta property="og:description" content="Machine-Learning Scientist working on explainable AI, remote sensing, and geospatial foundation models.">
+  <meta property="og:image" content="https://joshigunjan.github.io/assets/img/og-card.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gunjan Joshi">
+  <meta name="twitter:description" content="Explainable AI for Earth observation.">
+  <meta name="twitter:image" content="https://joshigunjan.github.io/assets/img/og-card.png">
+  <meta name="twitter:site" content="@gunjanjoshi882">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <style>
+    :root{
+      --bg:#050607;
+      --text:#f4f7fb;
+      --muted:#aeb8c9;
+      --accent:#2ee59d;
+      --accent-soft:rgba(46,229,157,.16);
+      --line:rgba(255,255,255,.11);
+      --panel:rgba(255,255,255,.045);
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 78% 45%, rgba(46,229,157,.10), transparent 58%),
+        radial-gradient(700px 500px at 15% 20%, rgba(80,120,255,.10), transparent 62%),
+        linear-gradient(135deg, #030405 0%, #080b10 45%, #020303 100%);
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.18;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size:64px 64px;
+      mask-image:radial-gradient(circle at 55% 45%, black, transparent 72%);
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .page{
+      min-height:100vh;
+      position:relative;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .topbar{
+      position:relative;
+      z-index:5;
+      width:min(1200px, calc(100% - 48px));
+      margin:0 auto;
+      padding:28px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:900;
+      letter-spacing:.02em;
+    }
+
+    .brand-mark{
+      width:12px;
+      height:12px;
+      border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 0 8px var(--accent-soft);
+    }
+
+    .top-nav{
+      display:flex;
+      align-items:center;
+      gap:30px;
+      color:var(--muted);
+      font-size:15px;
+      font-weight:700;
+    }
+
+    .top-nav a{
+      position:relative;
+      padding:8px 0;
+    }
+
+    .top-nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      height:2px;
+      background:var(--accent);
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform .18s ease;
+    }
+
+    .top-nav a:hover,
+    .top-nav a.active{
+      color:var(--text);
+    }
+
+    .top-nav a:hover::after,
+    .top-nav a.active::after{
+      transform:scaleX(1);
+    }
+
+    .hero{
+      flex:1;
+      position:relative;
+      z-index:2;
+      width:min(1200px, calc(100% - 48px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0, 1.05fr) minmax(340px, .95fr);
+      align-items:center;
+      gap:52px;
+      padding:60px 0 70px;
+    }
+
+    .hero-copy{
+      max-width:720px;
+    }
+
+    .eyebrow{
+      margin:0 0 18px 0;
+      color:var(--accent);
+      font-size:13px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:900;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(54px, 8vw, 104px);
+      line-height:.95;
+      letter-spacing:-.06em;
+      font-weight:950;
+    }
+
+    h1 span{
+      color:var(--accent);
+    }
+
+    .subtitle{
+      margin:24px 0 0 0;
+      color:var(--text);
+      font-size:clamp(24px, 3vw, 38px);
+      line-height:1.18;
+      font-weight:800;
+      letter-spacing:-.025em;
+    }
+
+    .subtitle em{
+      color:var(--accent);
+      font-style:normal;
+    }
+
+    .one-line{
+      margin:18px 0 0 0;
+      max-width:620px;
+      color:var(--muted);
+      font-size:19px;
+      line-height:1.65;
+    }
+
+    .hero-links{
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:34px;
+    }
+
+    .icon-link{
+      width:48px;
+      height:48px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      font-size:18px;
+      transition:transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+
+    .icon-link:hover{
+      transform:translateY(-3px);
+      border-color:rgba(46,229,157,.52);
+      background:rgba(46,229,157,.14);
+      color:var(--accent);
+    }
+
+    .hero-photo-wrap{
+      position:relative;
+      justify-self:end;
+      width:min(430px, 100%);
+    }
+
+    .hero-photo-wrap::before{
+      content:"";
+      position:absolute;
+      inset:-28px;
+      border-radius:40px;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(46,229,157,.20), transparent 35%),
+        radial-gradient(circle at 80% 80%, rgba(80,120,255,.18), transparent 42%);
+      filter:blur(4px);
+      opacity:.9;
+      z-index:-1;
+    }
+
+    .hero-photo{
+      width:100%;
+      display:block;
+      border-radius:34px;
+      border:1px solid rgba(255,255,255,.13);
+      background:rgba(255,255,255,.04);
+      filter:grayscale(.10) contrast(1.04);
+      box-shadow:0 30px 90px rgba(0,0,0,.55);
+    }
+
+    .photo-caption{
+      margin:16px 0 0 0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.5;
+      text-align:right;
+    }
+
+    .bottom-strip{
+      position:relative;
+      z-index:3;
+      width:min(1200px, calc(100% - 48px));
+      margin:0 auto;
+      padding:0 0 32px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:24px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .mini-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .mini-tags span{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    .visitor-counter{
+      max-width:260px;
+      opacity:.72;
+      transition:opacity .18s ease;
+    }
+
+    .visitor-counter:hover{
+      opacity:1;
+    }
+
+    .visitor-counter img{
+      display:block;
+      max-width:100%;
+      height:auto;
+      border:0;
+      border-radius:10px;
+    }
+
+    .sr-only{
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+      border:0;
+    }
+
+    @media (max-width:900px){
+      .topbar{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .top-nav{
+        gap:18px;
+        flex-wrap:wrap;
+      }
+
+      .hero{
+        grid-template-columns:1fr;
+        padding:36px 0 46px;
+      }
+
+      .hero-photo-wrap{
+        justify-self:start;
+        max-width:360px;
+      }
+
+      .photo-caption{
+        text-align:left;
+      }
+
+      .bottom-strip{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+
+    @media (max-width:560px){
+      .topbar,
+      .hero,
+      .bottom-strip{
+        width:min(100% - 32px, 1200px);
+      }
+
+      .top-nav{
+        font-size:14px;
+      }
+
+      .hero-links{
+        gap:10px;
+      }
+
+      .icon-link{
+        width:44px;
+        height:44px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="topbar">
+      <a class="brand" href="home.html" aria-label="Gunjan Joshi home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Gunjan Joshi</span>
+      </a>
+
+      <nav class="top-nav" aria-label="Primary">
+        <a class="active" href="home.html">Home</a>
+        <a href="index.html">About Me</a>
+        <a href="resume.html">Resume</a>
+        <a href="research.html">Research</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section class="hero-copy">
+        <p class="eyebrow">Explainable AI · Earth Observation · Foundation Models</p>
+
+        <h1><span>G.</span> Joshi</h1>
+
+        <p class="subtitle">
+          Machine-Learning Scientist<br/>
+          <em>for interpretable Earth observation.</em>
+        </p>
+
+        <p class="one-line">
+          I work on explainable and multimodal AI for remote sensing, with a focus on SAR/optical fusion,
+          cryosphere monitoring, geospatial foundation models, and trustworthy Earth observation datasets.
+        </p>
+
+        <div class="hero-links" aria-label="External profiles">
+          <a class="icon-link" href="https://scholar.google.com/citations?user=6i-Npr0AAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            <span class="sr-only">Google Scholar</span>
+          </a>
+
+          <a class="icon-link" href="https://orcid.org/0000-0001-6092-1408" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID">
+            <i class="fa-brands fa-orcid" aria-hidden="true"></i>
+            <span class="sr-only">ORCID</span>
+          </a>
+
+          <a class="icon-link" href="https://twitter.com/gunjanjoshi882" target="_blank" rel="noopener" aria-label="X / Twitter" title="X / Twitter">
+            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+            <span class="sr-only">X / Twitter</span>
+          </a>
+
+          <a class="icon-link" href="https://www.linkedin.com/in/gunjan-joshi-793603197/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span>
+          </a>
+
+          <a class="icon-link" href="https://github.com/joshigunjan" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span>
+          </a>
+        </div>
+      </section>
+
+      <aside class="hero-photo-wrap" aria-label="Profile image">
+        <img class="hero-photo" src="assets/img/Gunjan-Joshi-2.png" alt="Gunjan Joshi profile photo"/>
+        <p class="photo-caption">
+          Machine-Learning Scientist at Helmholtz-Zentrum Dresden-Rossendorf.
+        </p>
+      </aside>
+    </main>
+
+    <footer class="bottom-strip">
+      <div class="mini-tags" aria-label="Research keywords">
+        <span>Explainable AI</span>
+        <span>SAR + optical fusion</span>
+        <span>Cryosphere</span>
+        <span>3D-ABC</span>
+        <span>Metadata</span>
+      </div>
+
+      <div class="visitor-counter" aria-label="Visitor counter">
+        <a href="https://info.flagcounter.com/4ujz" target="_blank" rel="noopener">
+          <img
+            src="https://s05.flagcounter.com/count2/4ujz/bg_050607/txt_AEB8C9/border_050607/columns_4/maxflags_20/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+            alt="Flag Counter"
+          >
+        </a>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
