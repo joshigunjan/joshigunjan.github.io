@@ -3,212 +3,652 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>About · Gunjan Joshi</title>
-  <meta name="description" content="Professional profile of Gunjan Joshi."/>
+  <title>About Me · Gunjan Joshi</title>
+  <meta name="description" content="About Gunjan Joshi — Machine-Learning Scientist working on explainable AI, remote sensing, SAR/optical fusion, and geospatial foundation models."/>
 
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://joshigunjan.github.io/">
-<meta property="og:title" content="Gunjan Joshi">
-<meta property="og:description" content="Research Scientist at HZDR. Explainable AI, SAR + optical fusion, and foundation models for Earth observation.">
-<meta property="og:image" content="https://joshigunjan.github.io/assets/img/og-card.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://joshigunjan.github.io/about.html">
+  <meta property="og:title" content="About Me · Gunjan Joshi">
+  <meta property="og:description" content="Machine-Learning Scientist working on explainable AI, remote sensing, SAR/optical fusion, and geospatial foundation models.">
+  <meta property="og:image" content="https://joshigunjan.github.io/assets/img/og-card.png">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Gunjan Joshi">
-<meta name="twitter:description" content="Explainable AI, SAR + optical fusion, and foundation models for Earth observation.">
-<meta name="twitter:image" content="https://joshigunjan.github.io/assets/img/og-card.png">
-<meta name="twitter:site" content="@gunjanjoshi882">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Me · Gunjan Joshi">
+  <meta name="twitter:description" content="Explainable AI for Earth observation.">
+  <meta name="twitter:image" content="https://joshigunjan.github.io/assets/img/og-card.png">
+  <meta name="twitter:site" content="@gunjanjoshi882">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <style>
+    :root{
+      --bg:#0b1020;
+      --text:#e7ecff;
+      --muted:#aab5dd;
+      --accent:#7aa2ff;
+      --accent2:#5eead4;
+      --panel:rgba(10,12,22,.68);
+      --panel-soft:rgba(255,255,255,.045);
+      --border:rgba(231,236,255,.12);
+      --shadow:0 24px 80px rgba(0,0,0,.48);
+      --shadow-soft:0 12px 34px rgba(0,0,0,.28);
+    }
+
+    *{box-sizing:border-box}
+
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:"Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 700px at 15% 10%, rgba(122,162,255,.18), transparent 58%),
+        radial-gradient(950px 680px at 85% 22%, rgba(94,234,212,.13), transparent 58%),
+        linear-gradient(rgba(5,7,15,.78), rgba(5,7,15,.88)),
+        url("assets/img/aerial-shot-swiss-alps.jpg");
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+      overflow-x:hidden;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .topbar{
+      width:min(1220px, calc(100% - 56px));
+      margin:0 auto;
+      padding:30px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      position:relative;
+      z-index:3;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--text);
+      font-weight:900;
+      letter-spacing:.01em;
+    }
+
+    .brand-mark{
+      width:12px;
+      height:12px;
+      border-radius:999px;
+      background:var(--accent2);
+      box-shadow:0 0 0 7px rgba(94,234,212,.12);
+    }
+
+    .top-nav{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      color:var(--muted);
+      font-size:15px;
+      font-weight:750;
+    }
+
+    .top-nav a{
+      position:relative;
+      padding:8px 0;
+    }
+
+    .top-nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      height:2px;
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform .18s ease;
+    }
+
+    .top-nav a:hover,
+    .top-nav a.active{
+      color:var(--text);
+    }
+
+    .top-nav a:hover::after,
+    .top-nav a.active::after{
+      transform:scaleX(1);
+    }
+
+    .page{
+      width:min(1220px, calc(100% - 56px));
+      margin:0 auto;
+      padding:42px 0 74px;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:minmax(0, 1fr) 260px;
+      gap:58px;
+      align-items:center;
+      margin-bottom:34px;
+    }
+
+    .eyebrow{
+      margin:0 0 16px 0;
+      color:var(--accent2);
+      font-size:13px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:950;
+    }
+
+    h1{
+      margin:0;
+      max-width:860px;
+      color:var(--text);
+      font-family:"Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+      font-size:clamp(46px, 6vw, 78px);
+      line-height:1.02;
+      letter-spacing:-.055em;
+      font-weight:800;
+    }
+
+    .lead{
+      margin:22px 0 0 0;
+      max-width:820px;
+      color:var(--muted);
+      font-size:19px;
+      line-height:1.72;
+    }
+
+    .lead strong,
+    .section p strong{
+      color:var(--text);
+    }
+
+    .profile-mini{
+      padding:12px;
+      border:1px solid var(--border);
+      border-radius:28px;
+      background:rgba(10,12,22,.58);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(12px);
+    }
+
+    .profile-mini img{
+      width:100%;
+      display:block;
+      border-radius:20px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+    }
+
+    .icons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:26px;
+    }
+
+    .icon-link{
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.055);
+      color:var(--text);
+      font-size:17px;
+      box-shadow:var(--shadow-soft);
+      backdrop-filter:blur(10px);
+      transition:transform .18s ease, color .18s ease, background .18s ease, border-color .18s ease;
+    }
+
+    .icon-link:hover{
+      transform:translateY(-3px);
+      color:var(--accent2);
+      border-color:rgba(94,234,212,.45);
+      background:rgba(94,234,212,.10);
+    }
+
+    .section{
+      margin-top:24px;
+      padding:30px;
+      border:1px solid var(--border);
+      border-radius:26px;
+      background:var(--panel);
+      box-shadow:var(--shadow-soft);
+      backdrop-filter:blur(12px);
+    }
+
+    .section h2{
+      margin:0;
+      color:var(--text);
+      font-family:"Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+      font-size:31px;
+      line-height:1.2;
+      letter-spacing:-.035em;
+      font-weight:800;
+    }
+
+    .section p{
+      margin:14px 0 0 0;
+      color:var(--muted);
+      font-size:16.5px;
+      line-height:1.75;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:16px;
+      margin-top:22px;
+    }
+
+    .info-card{
+      padding:18px;
+      border:1px solid var(--border);
+      border-radius:18px;
+      background:var(--panel-soft);
+    }
+
+    .info-card strong{
+      display:block;
+      margin-bottom:8px;
+      color:var(--accent2);
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-weight:950;
+    }
+
+    .info-card span{
+      display:block;
+      color:var(--text);
+      font-size:15px;
+      line-height:1.55;
+    }
+
+    .focus-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:16px;
+      margin-top:22px;
+    }
+
+    .focus-card{
+      padding:20px;
+      border:1px solid var(--border);
+      border-radius:18px;
+      background:var(--panel-soft);
+      transition:transform .16s ease, border-color .16s ease, background .16s ease;
+    }
+
+    .focus-card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(94,234,212,.38);
+      background:rgba(94,234,212,.06);
+    }
+
+    .focus-card h3{
+      margin:0;
+      color:var(--text);
+      font-size:18px;
+      line-height:1.25;
+    }
+
+    .focus-card p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.65;
+    }
+
+    .highlight-list{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:16px;
+      margin-top:22px;
+    }
+
+    .highlight{
+      padding:20px;
+      border:1px solid var(--border);
+      border-radius:18px;
+      background:var(--panel-soft);
+    }
+
+    .highlight .tag{
+      display:inline-block;
+      margin-bottom:10px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(94,234,212,.10);
+      color:var(--accent2);
+      font-size:12px;
+      font-weight:950;
+    }
+
+    .highlight h3{
+      margin:0;
+      color:var(--text);
+      font-size:18px;
+    }
+
+    .highlight p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.65;
+    }
+
+    .footer{
+      width:min(1220px, calc(100% - 56px));
+      margin:0 auto;
+      padding:20px 0 32px;
+      color:rgba(170,181,221,.72);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      position:relative;
+      z-index:2;
+    }
+
+    .visitor-counter{
+      max-width:220px;
+      opacity:.52;
+      transition:opacity .18s ease;
+    }
+
+    .visitor-counter:hover{
+      opacity:.9;
+    }
+
+    .visitor-counter img{
+      display:block;
+      max-width:100%;
+      height:auto;
+      border:0;
+      border-radius:8px;
+    }
+
+    .sr-only{
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+      border:0;
+    }
+
+    @media (max-width:900px){
+      body{
+        background-attachment:scroll;
+      }
+
+      .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .top-nav{
+        flex-wrap:wrap;
+        gap:18px;
+      }
+
+      .hero{
+        grid-template-columns:1fr;
+      }
+
+      .profile-mini{
+        max-width:260px;
+      }
+
+      .info-grid,
+      .focus-grid,
+      .highlight-list{
+        grid-template-columns:1fr;
+      }
+
+      .footer{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+
+    @media (max-width:560px){
+      .topbar,
+      .page,
+      .footer{
+        width:min(100% - 32px, 1220px);
+      }
+
+      .page{
+        padding-top:30px;
+      }
+
+      h1{
+        font-size:44px;
+      }
+
+      .lead{
+        font-size:17px;
+      }
+
+      .section{
+        padding:22px;
+      }
+
+      .top-nav{
+        font-size:14px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="layout">
-      <aside class="sidebar">
-  <div class="side-top">
-    <img class="avatar" src="assets/img/Gunjan-Joshi-2.png" alt="Gunjan Joshi profile photo"/>
-    <h2 class="name">Gunjan Joshi</h2>
-    <p class="tagline">Researcher | Earth Observation Enthusiast | AI for Geoscience | Remote Sensing<br/>Remotely exploring the Earth, one pixel at a time 🛰🌍</p>
 
-    <div class="badges">
-      <span class="badge">Earth observation</span>
-      <span class="badge">Remote sensing</span>
-      <span class="badge">AI for geoscience</span>
-      <span class="badge">Explainable AI</span>
+  <header class="topbar">
+    <a class="brand" href="home.html" aria-label="Gunjan Joshi home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Gunjan Joshi</span>
+    </a>
+
+    <nav class="top-nav" aria-label="Primary">
+      <a href="home.html">Home</a>
+      <a class="active" href="about.html">About Me</a>
+      <a href="resume.html">Resume</a>
+      <a href="research.html">Research</a>
+    </nav>
+  </header>
+
+  <main class="page">
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">About Me</p>
+        <h1>Machine learning for interpretable Earth observation.</h1>
+
+        <p class="lead">
+          I am <strong>Gunjan Joshi</strong>, a Machine-Learning Scientist at
+          <strong>Helmholtz-Zentrum Dresden-Rossendorf</strong>, Germany. My work focuses on
+          explainable and multimodal AI for Earth observation, especially where different sensors reveal
+          different parts of the same environmental story.
+        </p>
+
+        <div class="icons" aria-label="External profiles">
+          <a class="icon-link" href="https://scholar.google.com/citations?user=6i-Npr0AAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            <span class="sr-only">Google Scholar</span>
+          </a>
+
+          <a class="icon-link" href="https://orcid.org/0000-0001-6092-1408" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID">
+            <i class="fa-brands fa-orcid" aria-hidden="true"></i>
+            <span class="sr-only">ORCID</span>
+          </a>
+
+          <a class="icon-link" href="https://twitter.com/gunjanjoshi882" target="_blank" rel="noopener" aria-label="X / Twitter" title="X / Twitter">
+            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+            <span class="sr-only">X / Twitter</span>
+          </a>
+
+          <a class="icon-link" href="https://www.linkedin.com/in/gunjan-joshi-793603197/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span>
+          </a>
+
+          <a class="icon-link" href="https://github.com/joshigunjan" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span>
+          </a>
+        </div>
+      </div>
+
+      <aside class="profile-mini" aria-label="Profile image">
+        <img src="assets/img/Gunjan-Joshi-2.png" alt="Gunjan Joshi profile photo"/>
+      </aside>
+    </section>
+
+    <section class="section">
+      <p class="eyebrow">Profile</p>
+      <h2>Current role and background</h2>
+
+      <p>
+        At HZDR, I work on <strong>geospatial foundation models</strong> and multimodal learning for Earth observation,
+        including the <strong>3D-ABC Foundation Model</strong> for global above- and below-ground carbon-stock mapping.
+        My broader research connects <strong>explainable AI</strong>, <strong>SAR and optical remote sensing</strong>,
+        and trustworthy geospatial data systems.
+      </p>
+
+      <p>
+        I earned my Ph.D. and M.Eng. in Electrical Engineering from <strong>The University of Tokyo</strong>,
+        where I worked on inverse mapping for neural-network explainability and its applications in remote sensing.
+        This line of work continues in my current research on confidence-aware interpretation, complex-valued models,
+        cryosphere monitoring, and metadata-aware Earth observation datasets.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <strong>Current role</strong>
+          <span>Machine-Learning Scientist, HZDR</span>
+        </div>
+
+        <div class="info-card">
+          <strong>Research focus</strong>
+          <span>Explainable AI · SAR/optical fusion · Geospatial foundation models</span>
+        </div>
+
+        <div class="info-card">
+          <strong>Academic background</strong>
+          <span>Ph.D. and M.Eng., The University of Tokyo</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="eyebrow">Research Focus</p>
+      <h2>What I work on</h2>
+
+      <div class="focus-grid">
+        <div class="focus-card">
+          <h3>Explainable AI</h3>
+          <p>Inverse mapping, confidence-aware interpretation, and trustworthy machine learning for Earth observation.</p>
+        </div>
+
+        <div class="focus-card">
+          <h3>SAR and optical fusion</h3>
+          <p>Multisensor learning across complementary satellite modalities, seasons, clouds, and observation conditions.</p>
+        </div>
+
+        <div class="focus-card">
+          <h3>Cryosphere monitoring</h3>
+          <p>Glacier surface classification, snowline estimation, and mountain-environment analysis using EO data.</p>
+        </div>
+
+        <div class="focus-card">
+          <h3>Geospatial foundation models</h3>
+          <p>Representation learning for large-scale Earth observation, carbon-stock modelling, and environmental intelligence.</p>
+        </div>
+
+        <div class="focus-card">
+          <h3>Metadata in EO datasets</h3>
+          <p>Dataset structure, metadata quality, reproducibility, and trustworthy AI workflows for Earth observation.</p>
+        </div>
+
+        <div class="focus-card">
+          <h3>Science communication</h3>
+          <p>IEEE GRSS editorial work, webinars, tutorials, teaching, and community-facing research communication.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="eyebrow">Selected Highlights</p>
+      <h2>Recent directions</h2>
+
+      <div class="highlight-list">
+        <div class="highlight">
+          <span class="tag">Foundation models</span>
+          <h3>3D-ABC</h3>
+          <p>Multimodal foundation model for global terrestrial above- and below-ground carbon-stock mapping.</p>
+        </div>
+
+        <div class="highlight">
+          <span class="tag">Metadata</span>
+          <h3>In Metadata We Trust</h3>
+          <p>Column on the central role of metadata in Earth observation datasets and reproducible AI workflows.</p>
+        </div>
+
+        <div class="highlight">
+          <span class="tag">Cryosphere</span>
+          <h3>Confidence-aware glacier classification</h3>
+          <p>Explainable SAR/optical fusion for glacier surface classification and cryosphere monitoring.</p>
+        </div>
+
+        <div class="highlight">
+          <span class="tag">PolSAR / XAI</span>
+          <h3>Complex-valued inverse mapping</h3>
+          <p>Explainability for complex-valued and polarimetric SAR neural-network models.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Gunjan Joshi</span>
+
+    <div class="visitor-counter" aria-label="Visitor counter">
+      <a href="https://info.flagcounter.com/4ujz" target="_blank" rel="noopener">
+        <img
+          src="https://s05.flagcounter.com/count2/4ujz/bg_0B1020/txt_AAB5DD/border_0B1020/columns_4/maxflags_20/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+          alt="Flag Counter"
+        >
+      </a>
     </div>
-  </div>
+  </footer>
 
-  <nav class="nav" aria-label="Primary">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="research.html">Research</a>
-  </nav>
-
-  <div class="side-links">
-    <a class="icon-btn" href="assets/GunjanJoshi_CV.pdf" target="_blank" rel="noopener"><span>CV</span></a>
-    <a class="icon-btn" href="https://scholar.google.com/citations?user=6i-Npr0AAAAJ&hl=en" target="_blank" rel="noopener"><span>Google Scholar</span></a>
-    <a class="icon-btn" href="https://twitter.com/gunjanjoshi882" target="_blank" rel="noopener"><span>Twitter</span></a>
-    <a class="icon-btn" href="https://www.linkedin.com/in/gunjan-joshi-793603197/" target="_blank" rel="noopener"><span>LinkedIn</span></a>
-    <a class="icon-btn" href="https://github.com/joshigunjan" target="_blank" rel="noopener"><span>GitHub</span></a>
-  </div>
-</aside>
-      <main class="main">
-        <header class="header">
-  <h1>About</h1>
-  <p>
-    Professional experience, education, recognitions, teaching, talks, and academic service.
-  </p>
-  <div class="actions">
-    <a class="btn primary" href="assets/GunjanJoshi_CV.pdf" target="_blank" rel="noopener">Download CV</a>
-    <a class="btn" href="https://www.linkedin.com/in/gunjan-joshi-793603197/" target="_blank" rel="noopener">LinkedIn</a>
-    <a class="btn" href="https://scholar.google.com/citations?user=6i-Npr0AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-  </div>
-</header>
-
-<div class="content">
-  <section class="section">
-    <h2>Professional experience</h2>
-    <div class="grid">
-      <div class="card">
-        <div class="kicker">Oct 2024 → Present</div>
-        <div class="title"><strong>Machine-Learning Scientist</strong> · Helmholtz-Zentrum Dresden-Rossendorf (Germany)</div>
-        <div class="meta">Supervisors: Dr. Peter Steinbach; Prof. Dr. Pedram Ghamisi. Project: 3D-ABC Foundation Model (Helmholtz Foundation Model Initiative).</div>
-      </div>
-      <div class="card">
-        <div class="kicker">Feb 2023 → Mar 2023</div>
-        <div class="title"><strong>Guest Scientist</strong> · German Aerospace Center (DLR, Germany)</div>
-        <div class="meta">Supervisor: Dr. Andreas J. Dietz. Project: Multi-sensor, multi-temporal mapping of Swiss Alpine glaciers using explainable AI.</div>
-      </div>
-      <div class="card">
-        <div class="kicker">Apr 2018 → Sep 2019</div>
-        <div class="title"><strong>Research Scholar</strong> · The University of Tokyo (Japan)</div>
-        <div class="meta">Electrical Engineering and Information Systems.</div>
-      </div>
-      <div class="card">
-        <div class="kicker">Dec 2016 → Mar 2018</div>
-        <div class="title"><strong>RF Engineer</strong> · TATA Advanced Systems (Bangalore, India)</div>
-        <div class="meta">RF systems engineering.</div>
-      </div>
-      <div class="card">
-        <div class="kicker">Jul 2016 → Dec 2016</div>
-        <div class="title"><strong>Network Engineer</strong> · Ericsson Global (Bangalore, India)</div>
-        <div class="meta">Telecom network operations and engineering.</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Education</h2>
-    <div class="card">
-      <div class="kicker">Ph.D. · Oct 2021 → Sep 2024</div>
-      <div class="title"><strong>Electrical Engineering and Information Systems</strong> · The University of Tokyo (Japan)</div>
-      <div class="meta">Degree awarded: 20 Sep 2024. Advisors: Prof. Akira Hirose; Assoc. Prof. Ryo Natsuaki (Co-advisor). Thesis: Inverse Mapping for Neural Network Explainability and its Applications in Earth Observation.</div>
-    </div>
-    <div class="card" style="margin-top:10px">
-      <div class="kicker">M.Eng. · Oct 2019 → Sep 2021</div>
-      <div class="title"><strong>Electrical Engineering and Information Systems</strong> · The University of Tokyo (Japan)</div>
-      <div class="meta">Advisors: Prof. Akira Hirose; Assoc. Prof. Ryo Natsuaki. Thesis: Analysis of Significant Factors in Multi-Sensor Satellite Data Fusion for Earthquake Damage Assessment.</div>
-    </div>
-    <div class="card" style="margin-top:10px">
-      <div class="kicker">B.Eng. · Sep 2012 → Jul 2016</div>
-      <div class="title"><strong>Electronics & Communication Engineering</strong> · Visvesvaraya Technological University (India)</div>
-      <div class="meta">Thesis: FPGA implementation of channel emulator for testing of wireless air interface using VHDL.</div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Recognitions</h2>
-    <div class="grid">
-      <div class="card">
-        <div class="kicker">Honors</div>
-        <ul>
-          <li>Rising Stars Women in Engineering, The University of Tokyo (Nov 2023)</li>
-          <li>Honor (Oct 2025) — see CV for details</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div class="kicker">Awards</div>
-        <ul>
-          <li>Best Poster Award, Department of Electrical Engineering and Information Sciences, The University of Tokyo (Jul 2023)</li>
-          <li>First Prize, Three Minutes Thesis (3MT), IEEE IGARSS (Jul 2022)</li>
-          <li>Japan Society of Photogrammetry and Remote Sensing (JSPRS) Award, Asian Conference on Remote Sensing (Nov 2021)</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div class="kicker">Grants</div>
-        <ul>
-          <li>RESTEC Research Grant 2023 (PI), 1M JPY (Jul 2023)</li>
-          <li>IEEE-GRSS IDEA Professional Development Microgrants (Jul 2023)</li>
-          <li>University of Tokyo Overseas Research Training (Musha Shugyo) Grant (Feb 2023)</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div class="kicker">Scholarship</div>
-        <ul>
-          <li>Japanese Government (MEXT) Monbukagakusho Scholarship (Apr 2018 → Sep 2024)</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Teaching & training</h2>
-    <ul>
-      <li>Course Instructor: Introduction to Machine Learning, HIDA (Apr 2025)</li>
-      <li>Course Instructor: Introduction to Deep Learning, HIDA (Oct 2025)</li>
-      <li>Trainer: HPC-Gateway Fall School (Nov 2025) — Machine Learning sessions</li>
-      <li>Talk: “Use of Modern Large Language Models to Support Your Scientific Writing” (HZDR PhD Students’ Writing Sprint)</li>
-      <li>Teaching Assistant: Advanced Academic Writing and Presentation, School of Engineering, The University of Tokyo (2020–2024)</li>
-      <li>Academic Writing Consultant: English Writing Center, School of Engineering, The University of Tokyo (2020–2024)</li>
-    </ul>
-  </section>
-
-  <section class="section">
-    <h2>Invited talks</h2>
-    <ul>
-      <li>Invited Talk, IIIT Bangalore (Jan 2026): “Opening the Black Box: Understanding Multi-Sensor Fusion through Explainable AI”.</li>
-      <li>Invited Speaker, IEEE GRSS Young Professionals Summit (Dec 2025): “Advancing Earth Observation with Foundation Models”.</li>
-      <li>Invited Speaker, IEEE GRSS Sri Lanka Chapter (Oct 2025): “Making Sense of Sensors: Using Explainable AI for Multi-Sensor Data Fusion”.</li>
-      <li>Invited Speaker, IGARSS 2025 tutorial (Aug 2025): “Explainable AI and its Applications in Multi-Sensor Earth Observation”.</li>
-      <li>Invited Speaker, The University of Melbourne (Dec 2024): “Explainable AI and its Applications in Earth Observation”.</li>
-    </ul>
-  </section>
-
-  <section class="section">
-    <h2>Academic service</h2>
-    <ul>
-      <li>Editorial Board (Column Editor), IEEE Geoscience and Remote Sensing Magazine (Mar 2025 → Present)</li>
-      <li>Webinar Strategist, Digital Content Team Lead, IEEE Geoscience and Remote Sensing Society (Jul 2024 → Present)</li>
-      <li>Social Media Ambassador, IEEE Geoscience and Remote Sensing Society (Mar 2023 → Jul 2024)</li>
-    </ul>
-  </section>
-
-  <section class="section">
-    <h2>Reviewer</h2>
-    <ul>
-      <li>IEEE Open Journal of the Computer Society</li>
-      <li>IEEE Geoscience and Remote Sensing Magazine</li>
-      <li>European Journal of Remote Sensing</li>
-      <li>IEEE Transactions on Geoscience and Remote Sensing</li>
-      <li>Helmholtz AI Conference 2025</li>
-      <li>Advances in Space Research (Elsevier)</li>
-      <li>Asia-Pacific Conference on Synthetic Aperture Radar 2023</li>
-      <li>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</li>
-    </ul>
-  </section>
-</div>
-        <div class="footer">
-  <span>© 2026 Gunjan Joshi</span>
-  <div class="links">
-    <a href="https://scholar.google.com/citations?user=6i-Npr0AAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
-    <a href="https://github.com/joshigunjan" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://twitter.com/gunjanjoshi882" target="_blank" rel="noopener">Twitter</a>
-    <a href="https://www.linkedin.com/in/gunjan-joshi-793603197/" target="_blank" rel="noopener">LinkedIn</a>
-  </div>
-</div>
-      </main>
-    </div>
-  </div>
-  <script src="assets/js/main.js"></script>
 </body>
 </html>
