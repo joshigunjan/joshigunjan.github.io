@@ -35,10 +35,10 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
   <style>
-    /* Page-specific update: full-width geographic footprint map */
+    /* Page-specific update: full-width map, study-area list and details side-by-side */
 
     .theme-map-block .footprint-lead{
-      max-width:820px;
+      max-width:760px;
     }
 
     .footprint-map-full{
@@ -55,22 +55,33 @@
       min-height:560px;
     }
 
+    .footprint-browse{
+      display:grid;
+      grid-template-columns:minmax(280px, .78fr) minmax(0, 1.22fr);
+      gap:18px;
+      margin-top:18px;
+      align-items:stretch;
+    }
+
     .study-area-tabs{
       display:flex;
-      flex-wrap:wrap;
+      flex-direction:column;
       gap:10px;
-      margin-top:16px;
-      padding:14px;
+      margin-top:0;
+      padding:18px;
       border:1px solid var(--border);
-      border-radius:20px;
+      border-radius:22px;
       background:rgba(255,255,255,.035);
     }
 
+    .study-area-tabs .eyebrow{
+      margin-bottom:4px;
+    }
+
     .study-area-tabs .site-button{
-      width:auto;
-      flex:0 0 auto;
+      width:100%;
       margin:0;
-      padding:10px 13px;
+      padding:11px 13px;
     }
 
     .study-area-tabs .site-button.active{
@@ -80,8 +91,7 @@
     }
 
     .footprint-detail{
-      margin-top:16px;
-      padding:22px;
+      padding:24px;
       border:1px solid var(--border);
       border-radius:22px;
       background:var(--panel-soft);
@@ -90,27 +100,36 @@
     .footprint-detail h3{
       margin:0;
       color:var(--text);
-      font-size:26px;
-      line-height:1.25;
-      letter-spacing:-.035em;
+      font-size:30px;
+      line-height:1.2;
+      letter-spacing:-.04em;
     }
 
     .footprint-detail p{
-      margin:10px 0 0 0;
+      margin:12px 0 0 0;
       color:var(--muted);
-      font-size:16.5px;
-      line-height:1.65;
+      font-size:17px;
+      line-height:1.68;
       max-width:900px;
     }
 
     .footprint-detail-grid{
       display:grid;
       grid-template-columns:minmax(0, .85fr) minmax(0, 1.15fr);
-      gap:20px;
+      gap:24px;
       align-items:start;
     }
 
-    @media (max-width:900px){
+    .footprint-detail .footprint-links{
+      margin-top:0;
+    }
+
+    .leaflet-interactive{
+      cursor:pointer;
+    }
+
+    @media (max-width:980px){
+      .footprint-browse,
       .footprint-detail-grid{
         grid-template-columns:1fr;
       }
@@ -119,6 +138,20 @@
       .footprint-map-full #researchMap{
         min-height:460px;
         height:460px;
+      }
+
+      .study-area-tabs{
+        flex-direction:row;
+        flex-wrap:wrap;
+      }
+
+      .study-area-tabs .eyebrow{
+        width:100%;
+      }
+
+      .study-area-tabs .site-button{
+        width:auto;
+        flex:0 0 auto;
       }
     }
 
@@ -144,7 +177,7 @@
       }
 
       .footprint-detail h3{
-        font-size:22px;
+        font-size:24px;
       }
     }
   </style>
@@ -330,22 +363,27 @@
             <div id="researchMap" aria-label="Interactive map of research study areas"></div>
           </div>
 
-          <div class="study-area-tabs site-list" id="siteList" aria-label="Research site list"></div>
+          <div class="footprint-browse">
+            <div class="study-area-tabs site-list" aria-label="Research site list">
+              <p class="eyebrow">Study Areas</p>
+              <div id="siteList"></div>
+            </div>
 
-          <div class="footprint-detail" aria-label="Selected research footprint study area">
-            <div class="footprint-detail-grid">
-              <div>
-                <p class="eyebrow">Study Area</p>
-                <h3 id="footprint-title">Click a study area</h3>
-                <p id="footprint-description">
-                  Select a region on the map or choose a study area below the map.
-                </p>
-                <div id="footprint-tags" class="footprint-tags"></div>
-              </div>
+            <div class="footprint-detail" aria-label="Selected research footprint study area">
+              <div class="footprint-detail-grid">
+                <div>
+                  <p class="eyebrow">Study Area</p>
+                  <h3 id="footprint-title">Click a study area</h3>
+                  <p id="footprint-description">
+                    Select a region on the map or choose a study area from the list.
+                  </p>
+                  <div id="footprint-tags" class="footprint-tags"></div>
+                </div>
 
-              <div>
-                <p class="eyebrow">Related Outputs</p>
-                <div id="footprint-links" class="footprint-links"></div>
+                <div>
+                  <p class="eyebrow">Related Outputs</p>
+                  <div id="footprint-links" class="footprint-links"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -375,7 +413,7 @@
       {
         id: "palu",
         name: "Palu, Indonesia",
-        coords: [-0.9003, 119.8779],
+        points: [[-0.9003, 119.8779]],
         theme: "Disaster monitoring",
         color: "#fb7185",
         description: "Earthquake damage assessment and significant-feature analysis using multi-sensor satellite data.",
@@ -389,7 +427,7 @@
       {
         id: "imja",
         name: "Imja Glacier, Nepal",
-        coords: [27.9006, 86.9295],
+        points: [[27.9006, 86.9295]],
         theme: "Cryosphere / LULC",
         color: "#7dd3fc",
         description: "Glacier and land-surface classification work using inverse mapping and explainable neural-network analysis.",
@@ -401,7 +439,7 @@
       {
         id: "aletsch",
         name: "Aletsch Glacier, Switzerland",
-        coords: [46.4542, 8.0776],
+        points: [[46.4542, 8.0776]],
         theme: "Cryosphere / multi-sensor EO",
         color: "#7dd3fc",
         description: "Alpine glacier monitoring using optical and SAR data fusion with explainable neural-network methods.",
@@ -413,7 +451,7 @@
       {
         id: "tomakomai",
         name: "Tomakomai, Hokkaido, Japan",
-        coords: [42.6341, 141.6055],
+        points: [[42.6341, 141.6055]],
         theme: "Complex-valued neural networks / PolSAR",
         color: "#c084fc",
         description: "Complex-valued neural-network inverse mapping for explainability in PolSAR/InSAR applications.",
@@ -422,60 +460,31 @@
         ]
       },
       {
-        id: "svalbard",
-        name: "Svalbard",
-        coords: [78.2232, 15.6267],
+        id: "lake-glaciers",
+        name: "Svalbard, Jan Mayen & Central Himalaya",
+        points: [
+          [78.2232, 15.6267],
+          [71.0318, -8.2920],
+          [30.3753, 79.4636]
+        ],
         theme: "Cryosphere mapping",
         color: "#38bdf8",
-        description: "Large-scale glacier mapping and lake-terminating glacier inventory work.",
+        description: "High-latitude and Himalayan glacier mapping connected to the global lake-terminating glacier inventory.",
         links: [
           { label: "ESSD 2025 · Global mapping of lake-terminating glaciers", url: "https://doi.org/10.5194/essd-2025-315" },
           { label: "Dataset · Lake-terminating glaciers", url: "https://doi.org/10.5281/zenodo.15524734" }
         ]
       },
       {
-        id: "jan-mayen",
-        name: "Jan Mayen Island",
-        coords: [71.0318, -8.2920],
-        theme: "Cryosphere mapping",
-        color: "#38bdf8",
-        description: "Glacier mapping in high-latitude island environments as part of the global lake-terminating glacier inventory.",
-        links: [
-          { label: "ESSD 2025 · Global mapping of lake-terminating glaciers", url: "https://doi.org/10.5194/essd-2025-315" },
-          { label: "Dataset · Lake-terminating glaciers", url: "https://doi.org/10.5281/zenodo.15524734" }
-        ]
-      },
-      {
-        id: "central-himalaya",
-        name: "Central Himalaya",
-        coords: [30.3753, 79.4636],
-        theme: "Cryosphere mapping",
-        color: "#67e8f9",
-        description: "High-mountain glacier mapping connected to the global lake-terminating glacier inventory.",
-        links: [
-          { label: "ESSD 2025 · Global mapping of lake-terminating glaciers", url: "https://doi.org/10.5194/essd-2025-315" },
-          { label: "Dataset · Lake-terminating glaciers", url: "https://doi.org/10.5281/zenodo.15524734" }
-        ]
-      },
-      {
-        id: "amazon",
-        name: "Amazon Basin",
-        coords: [-3.4653, -62.2159],
-        theme: "Geospatial foundation models",
-        color: "#86efac",
-        description: "Large-scale multimodal foundation model research for above- and below-ground carbon-stock mapping.",
-        links: [
-          { label: "IGARSS 2025 · 3D-ABC foundation model", url: "https://doi.org/10.1109/IGARSS55030.2025.11242519" },
-          { label: "ESA-NASA FM Workshop 2025 · 3D-ABC permafrost carbon", url: "https://www.3d-abc.ai/files/Hashemi_et_al_3D-ABC_Permafrost_Carbon_ESA_NASA_FM_Workshop.pdf" }
-        ]
-      },
-      {
-        id: "arctic",
-        name: "Arctic / Permafrost regions",
-        coords: [68.5, 95.0],
+        id: "abc",
+        name: "Amazon Basin & Arctic / Permafrost regions",
+        points: [
+          [-3.4653, -62.2159],
+          [68.5, 95.0]
+        ],
         theme: "Geospatial foundation models / carbon stocks",
-        color: "#a7f3d0",
-        description: "Multimodal geospatial foundation model research for permafrost soil carbon-stock estimation.",
+        color: "#86efac",
+        description: "Large-scale multimodal foundation model research for above- and below-ground carbon-stock mapping and permafrost soil carbon-stock estimation.",
         links: [
           { label: "IGARSS 2025 · 3D-ABC foundation model", url: "https://doi.org/10.1109/IGARSS55030.2025.11242519" },
           { label: "ESA-NASA FM Workshop 2025 · 3D-ABC permafrost carbon", url: "https://www.3d-abc.ai/files/Hashemi_et_al_3D-ABC_Permafrost_Carbon_ESA_NASA_FM_Workshop.pdf" }
@@ -505,11 +514,35 @@
 
       const mapBounds = L.latLngBounds([]);
       const buttons = {};
+      const siteLayers = {};
 
       function setActiveButton(siteId) {
         Object.values(buttons).forEach((button) => button.classList.remove("active"));
         if (buttons[siteId]) {
           buttons[siteId].classList.add("active");
+        }
+      }
+
+      function siteCenter(site) {
+        const lat = site.points.reduce((sum, point) => sum + point[0], 0) / site.points.length;
+        const lng = site.points.reduce((sum, point) => sum + point[1], 0) / site.points.length;
+        return [lat, lng];
+      }
+
+      function siteBounds(site) {
+        const bounds = L.latLngBounds([]);
+        site.points.forEach((point) => bounds.extend(point));
+        return bounds;
+      }
+
+      function focusSite(site) {
+        if (site.points.length === 1) {
+          map.flyTo(site.points[0], Math.max(map.getZoom(), 4), { duration: 0.7 });
+        } else {
+          map.fitBounds(siteBounds(site), {
+            padding: [80, 80],
+            maxZoom: 3
+          });
         }
       }
 
@@ -538,46 +571,54 @@
       }
 
       researchSites.forEach((site) => {
-        mapBounds.extend(site.coords);
+        siteLayers[site.id] = [];
 
-        const region = L.circleMarker(site.coords, {
-          radius: 23,
-          color: site.color,
-          weight: 2.5,
-          opacity: 0.95,
-          fillColor: site.color,
-          fillOpacity: 0.22,
-          interactive: true
-        }).addTo(map);
+        site.points.forEach((point) => {
+          mapBounds.extend(point);
 
-        region.bindPopup(`
-          <div class="map-popup">
-            <strong>${site.name}</strong>
-            <span>${site.theme}</span>
-            <p>${site.description}</p>
-          </div>
-        `);
-
-        region.on("click", () => {
-          renderSite(site);
-          map.flyTo(site.coords, Math.max(map.getZoom(), 4), {
-            duration: 0.7
-          });
-        });
-
-        region.on("mouseover", () => {
-          region.setStyle({
-            radius: 27,
-            fillOpacity: 0.34,
-            weight: 3
-          });
-        });
-
-        region.on("mouseout", () => {
-          region.setStyle({
+          const region = L.circleMarker(point, {
             radius: 23,
+            color: site.color,
+            weight: 2.5,
+            opacity: 0.95,
+            fillColor: site.color,
             fillOpacity: 0.22,
-            weight: 2.5
+            interactive: true
+          }).addTo(map);
+
+          siteLayers[site.id].push(region);
+
+          region.bindPopup(`
+            <div class="map-popup">
+              <strong>${site.name}</strong>
+              <span>${site.theme}</span>
+              <p>${site.description}</p>
+            </div>
+          `);
+
+          region.on("click", () => {
+            renderSite(site);
+            focusSite(site);
+          });
+
+          region.on("mouseover", () => {
+            siteLayers[site.id].forEach((layer) => {
+              layer.setStyle({
+                radius: 27,
+                fillOpacity: 0.34,
+                weight: 3
+              });
+            });
+          });
+
+          region.on("mouseout", () => {
+            siteLayers[site.id].forEach((layer) => {
+              layer.setStyle({
+                radius: 23,
+                fillOpacity: 0.22,
+                weight: 2.5
+              });
+            });
           });
         });
 
@@ -592,10 +633,11 @@
 
           button.addEventListener("click", () => {
             renderSite(site);
-            map.flyTo(site.coords, 4, {
-              duration: 0.7
-            });
-            region.openPopup();
+            focusSite(site);
+
+            if (siteLayers[site.id] && siteLayers[site.id][0]) {
+              siteLayers[site.id][0].openPopup();
+            }
           });
 
           buttons[site.id] = button;
