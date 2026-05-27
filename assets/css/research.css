@@ -469,3 +469,191 @@ h1{
     font-size:14px;
   }
 }
+
+/* ---------- Global font-size boost ---------- */
+
+body{
+  font-size:18px;
+}
+
+/* Navigation */
+.brand{
+  font-size:18px;
+}
+
+.top-nav{
+  font-size:16.5px;
+}
+
+/* Home page */
+main.hero h1{
+  font-size:clamp(68px, 8.2vw, 118px);
+}
+
+.role{
+  font-size:clamp(31px, 3.5vw, 46px);
+  line-height:1.16;
+}
+
+.intro{
+  font-size:20px;
+  line-height:1.78;
+  max-width:720px;
+}
+
+/* Page titles */
+section.hero h1,
+.hero h1{
+  font-size:clamp(52px, 6.2vw, 84px);
+}
+
+.lead{
+  font-size:19.5px;
+  line-height:1.78;
+  max-width:900px;
+}
+
+/* Section text */
+.section h2{
+  font-size:36px;
+}
+
+.section p{
+  font-size:18px;
+  line-height:1.78;
+}
+
+/* About cards */
+.glance-card span,
+.focus-card p{
+  font-size:17px;
+}
+
+.focus-card h3{
+  font-size:21px;
+}
+
+/* Resume */
+.item .role{
+  font-size:15.5px;
+}
+
+.date{
+  font-size:14.5px;
+}
+
+.desc{
+  font-size:17px;
+}
+
+.bullets li{
+  font-size:17px;
+}
+
+.pill-title{
+  font-size:18px;
+}
+
+.pill-meta{
+  font-size:16.5px;
+}
+
+/* Research page */
+.pub-title{
+  font-size:18.5px;
+}
+
+.pub-authors{
+  font-size:16px;
+}
+
+.pub-meta{
+  font-size:15.5px;
+}
+
+.pub-tag,
+.pub-link{
+  font-size:13.5px;
+  padding:7px 10px;
+}
+
+.chip{
+  font-size:14px;
+  padding:9px 13px;
+}
+
+.filter-label{
+  font-size:13px;
+}
+
+.theme-card h3{
+  font-size:19px;
+}
+
+.theme-card p{
+  font-size:16.5px;
+}
+
+/* Footer */
+.footer{
+  font-size:14.5px;
+}
+
+/* ---------- Mobile font-size correction ---------- */
+
+@media (max-width:620px){
+  body{
+    font-size:17px;
+  }
+
+  main.hero h1{
+    font-size:58px;
+  }
+
+  section.hero h1,
+  .hero h1{
+    font-size:48px;
+  }
+
+  .role{
+    font-size:30px;
+  }
+
+  .intro,
+  .lead{
+    font-size:18.5px;
+    line-height:1.72;
+  }
+
+  .section h2{
+    font-size:32px;
+  }
+
+  .section p,
+  .desc,
+  .bullets li,
+  .focus-card p,
+  .glance-card span{
+    font-size:16.8px;
+  }
+
+  .pub-title{
+    font-size:17.5px;
+  }
+
+  .pub-authors{
+    font-size:15.5px;
+  }
+
+  .pub-meta{
+    font-size:14.8px;
+  }
+
+  .chip{
+    font-size:13.5px;
+  }
+
+  .top-nav{
+    font-size:15.5px;
+  }
+}
