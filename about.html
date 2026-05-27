@@ -42,7 +42,6 @@
     }
 
     *{box-sizing:border-box}
-
     html{scroll-behavior:smooth}
 
     body{
@@ -145,7 +144,7 @@
       grid-template-columns:minmax(0, 1fr) 260px;
       gap:58px;
       align-items:center;
-      margin-bottom:34px;
+      margin-bottom:24px;
     }
 
     .eyebrow{
@@ -159,20 +158,20 @@
 
     h1{
       margin:0;
-      max-width:860px;
+      max-width:880px;
       color:var(--text);
       font-family:"Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-      font-size:clamp(46px, 6vw, 78px);
-      line-height:1.02;
+      font-size:clamp(42px, 5.5vw, 72px);
+      line-height:1.03;
       letter-spacing:-.055em;
       font-weight:800;
     }
 
     .lead{
       margin:22px 0 0 0;
-      max-width:820px;
+      max-width:840px;
       color:var(--muted);
-      font-size:19px;
+      font-size:18px;
       line-height:1.72;
     }
 
@@ -255,21 +254,21 @@
       line-height:1.75;
     }
 
-    .info-grid{
+    .glance-grid{
       display:grid;
       grid-template-columns:repeat(3, minmax(0,1fr));
       gap:16px;
       margin-top:22px;
     }
 
-    .info-card{
+    .glance-card{
       padding:18px;
       border:1px solid var(--border);
       border-radius:18px;
       background:var(--panel-soft);
     }
 
-    .info-card strong{
+    .glance-card strong{
       display:block;
       margin-bottom:8px;
       color:var(--accent2);
@@ -279,7 +278,7 @@
       font-weight:950;
     }
 
-    .info-card span{
+    .glance-card span{
       display:block;
       color:var(--text);
       font-size:15px;
@@ -294,6 +293,7 @@
     }
 
     .focus-card{
+      display:block;
       padding:20px;
       border:1px solid var(--border);
       border-radius:18px;
@@ -321,42 +321,14 @@
       line-height:1.65;
     }
 
-    .highlight-list{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
-      gap:16px;
-      margin-top:22px;
-    }
-
-    .highlight{
-      padding:20px;
-      border:1px solid var(--border);
-      border-radius:18px;
-      background:var(--panel-soft);
-    }
-
-    .highlight .tag{
+    .focus-card .hint{
       display:inline-block;
-      margin-bottom:10px;
-      padding:6px 10px;
-      border-radius:999px;
-      background:rgba(94,234,212,.10);
+      margin-top:12px;
       color:var(--accent2);
       font-size:12px;
-      font-weight:950;
-    }
-
-    .highlight h3{
-      margin:0;
-      color:var(--text);
-      font-size:18px;
-    }
-
-    .highlight p{
-      margin:8px 0 0 0;
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.65;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
     }
 
     .footer{
@@ -404,9 +376,7 @@
     }
 
     @media (max-width:900px){
-      body{
-        background-attachment:scroll;
-      }
+      body{background-attachment:scroll}
 
       .topbar{
         flex-direction:column;
@@ -426,9 +396,8 @@
         max-width:260px;
       }
 
-      .info-grid,
-      .focus-grid,
-      .highlight-list{
+      .glance-grid,
+      .focus-grid{
         grid-template-columns:1fr;
       }
 
@@ -450,7 +419,7 @@
       }
 
       h1{
-        font-size:44px;
+        font-size:42px;
       }
 
       .lead{
@@ -471,13 +440,13 @@
 <body>
 
   <header class="topbar">
-    <a class="brand" href="home.html" aria-label="Gunjan Joshi home">
+    <a class="brand" href="index.html" aria-label="Gunjan Joshi home">
       <span class="brand-mark" aria-hidden="true"></span>
       <span>Gunjan Joshi</span>
     </a>
 
     <nav class="top-nav" aria-label="Primary">
-      <a href="home.html">Home</a>
+      <a href="index.html">Home</a>
       <a class="active" href="about.html">About Me</a>
       <a href="resume.html">Resume</a>
       <a href="research.html">Research</a>
@@ -489,13 +458,20 @@
     <section class="hero">
       <div>
         <p class="eyebrow">About Me</p>
-        <h1>Machine learning for interpretable Earth observation.</h1>
+        <h1>Making Earth-observation AI more interpretable.</h1>
 
         <p class="lead">
           I am <strong>Gunjan Joshi</strong>, a Machine-Learning Scientist at
           <strong>Helmholtz-Zentrum Dresden-Rossendorf</strong>, Germany. My work focuses on
-          explainable and multimodal AI for Earth observation, especially where different sensors reveal
-          different parts of the same environmental story.
+          explainable and multimodal AI for Earth observation, including SAR/optical data fusion,
+          glacier monitoring, disaster mapping, and geospatial foundation models for carbon-stock estimation.
+        </p>
+
+        <p class="lead">
+          My path into this field began with electrical engineering, RF systems, and signal processing,
+          and later moved toward remote sensing, neural networks, and explainable AI. That background shapes
+          how I think about Earth observation: not only as images and models, but as sensing systems whose
+          physical meaning should remain understandable.
         </p>
 
         <div class="icons" aria-label="External profiles">
@@ -532,37 +508,23 @@
     </section>
 
     <section class="section">
-      <p class="eyebrow">Profile</p>
-      <h2>Current role and background</h2>
+      <p class="eyebrow">At a glance</p>
+      <h2>Researcher profile</h2>
 
-      <p>
-        At HZDR, I work on <strong>geospatial foundation models</strong> and multimodal learning for Earth observation,
-        including the <strong>3D-ABC Foundation Model</strong> for global above- and below-ground carbon-stock mapping.
-        My broader research connects <strong>explainable AI</strong>, <strong>SAR and optical remote sensing</strong>,
-        and trustworthy geospatial data systems.
-      </p>
-
-      <p>
-        I earned my Ph.D. and M.Eng. in Electrical Engineering from <strong>The University of Tokyo</strong>,
-        where I worked on inverse mapping for neural-network explainability and its applications in remote sensing.
-        This line of work continues in my current research on confidence-aware interpretation, complex-valued models,
-        cryosphere monitoring, and metadata-aware Earth observation datasets.
-      </p>
-
-      <div class="info-grid">
-        <div class="info-card">
-          <strong>Current role</strong>
+      <div class="glance-grid">
+        <div class="glance-card">
+          <strong>Role</strong>
           <span>Machine-Learning Scientist, HZDR</span>
         </div>
 
-        <div class="info-card">
-          <strong>Research focus</strong>
-          <span>Explainable AI · SAR/optical fusion · Geospatial foundation models</span>
+        <div class="glance-card">
+          <strong>Background</strong>
+          <span>Electrical engineering, RF systems, remote sensing, and explainable AI</span>
         </div>
 
-        <div class="info-card">
-          <strong>Academic background</strong>
-          <span>Ph.D. and M.Eng., The University of Tokyo</span>
+        <div class="glance-card">
+          <strong>Current focus</strong>
+          <span>Geospatial foundation models and interpretable Earth-observation AI</span>
         </div>
       </div>
     </section>
@@ -572,66 +534,41 @@
       <h2>What I work on</h2>
 
       <div class="focus-grid">
-        <div class="focus-card">
+        <a class="focus-card" href="research.html?theme=xai">
           <h3>Explainable AI</h3>
           <p>Inverse mapping, confidence-aware interpretation, and trustworthy machine learning for Earth observation.</p>
-        </div>
+          <span class="hint">View related publications</span>
+        </a>
 
-        <div class="focus-card">
+        <a class="focus-card" href="research.html?theme=fusion">
           <h3>SAR and optical fusion</h3>
           <p>Multisensor learning across complementary satellite modalities, seasons, clouds, and observation conditions.</p>
-        </div>
+          <span class="hint">View related publications</span>
+        </a>
 
-        <div class="focus-card">
+        <a class="focus-card" href="research.html?theme=cryosphere">
           <h3>Cryosphere monitoring</h3>
           <p>Glacier surface classification, snowline estimation, and mountain-environment analysis using EO data.</p>
-        </div>
+          <span class="hint">View related publications</span>
+        </a>
 
-        <div class="focus-card">
+        <a class="focus-card" href="research.html?theme=foundation">
           <h3>Geospatial foundation models</h3>
           <p>Representation learning for large-scale Earth observation, carbon-stock modelling, and environmental intelligence.</p>
-        </div>
+          <span class="hint">View related publications</span>
+        </a>
 
-        <div class="focus-card">
+        <a class="focus-card" href="research.html?theme=metadata">
           <h3>Metadata in EO datasets</h3>
           <p>Dataset structure, metadata quality, reproducibility, and trustworthy AI workflows for Earth observation.</p>
-        </div>
+          <span class="hint">View related publications</span>
+        </a>
 
-        <div class="focus-card">
-          <h3>Science communication</h3>
-          <p>IEEE GRSS editorial work, webinars, tutorials, teaching, and community-facing research communication.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <p class="eyebrow">Selected Highlights</p>
-      <h2>Recent directions</h2>
-
-      <div class="highlight-list">
-        <div class="highlight">
-          <span class="tag">Foundation models</span>
-          <h3>3D-ABC</h3>
-          <p>Multimodal foundation model for global terrestrial above- and below-ground carbon-stock mapping.</p>
-        </div>
-
-        <div class="highlight">
-          <span class="tag">Metadata</span>
-          <h3>In Metadata We Trust</h3>
-          <p>Column on the central role of metadata in Earth observation datasets and reproducible AI workflows.</p>
-        </div>
-
-        <div class="highlight">
-          <span class="tag">Cryosphere</span>
-          <h3>Confidence-aware glacier classification</h3>
-          <p>Explainable SAR/optical fusion for glacier surface classification and cryosphere monitoring.</p>
-        </div>
-
-        <div class="highlight">
-          <span class="tag">PolSAR / XAI</span>
-          <h3>Complex-valued inverse mapping</h3>
-          <p>Explainability for complex-valued and polarimetric SAR neural-network models.</p>
-        </div>
+        <a class="focus-card" href="research.html?theme=disaster">
+          <h3>Disaster and land-surface mapping</h3>
+          <p>Earthquake damage assessment, land-cover analysis, and interpretation of significant surface features.</p>
+          <span class="hint">View related publications</span>
+        </a>
       </div>
     </section>
 
