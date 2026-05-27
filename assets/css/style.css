@@ -721,3 +721,16 @@ main.page > section.hero h1{
     font-size:15.5px;
   }
 }
+/* ---------- About page without profile photo ---------- */
+
+.about-hero{
+  align-items:flex-start;
+}
+
+.about-hero > div{
+  max-width:1040px;
+}
+
+.about-hero .lead{
+  max-width:980px;
+}
