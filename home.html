@@ -18,6 +18,10 @@
   <meta name="twitter:image" content="https://joshigunjan.github.io/assets/img/og-card.png">
   <meta name="twitter:site" content="@gunjanjoshi882">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -47,12 +51,12 @@
     body{
       margin:0;
       min-height:100vh;
-      font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-family:"Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
       background:
         radial-gradient(1000px 700px at 15% 10%, rgba(122,162,255,.18), transparent 58%),
         radial-gradient(950px 680px at 85% 22%, rgba(94,234,212,.13), transparent 58%),
-        linear-gradient(rgba(5,7,15,.78), rgba(5,7,15,.84)),
+        linear-gradient(rgba(5,7,15,.76), rgba(5,7,15,.86)),
         url("assets/img/aerial-shot-swiss-alps.jpg");
       background-size:cover;
       background-position:center;
@@ -142,10 +146,10 @@
       width:min(1220px, calc(100% - 56px));
       margin:0 auto;
       display:grid;
-      grid-template-columns:minmax(0, 1.08fr) minmax(320px, .92fr);
+      grid-template-columns:minmax(0, 1.08fr) minmax(300px, .84fr);
       align-items:center;
-      gap:76px;
-      padding:54px 0 72px;
+      gap:72px;
+      padding:44px 0 64px;
       position:relative;
       z-index:2;
     }
@@ -167,16 +171,17 @@
       margin:0;
       max-width:850px;
       color:var(--text);
-      font-size:clamp(58px, 8vw, 112px);
-      line-height:.95;
-      letter-spacing:-.07em;
-      font-weight:950;
+      font-family:"Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+      font-size:clamp(58px, 7.6vw, 104px);
+      line-height:.96;
+      letter-spacing:-.055em;
+      font-weight:800;
     }
 
     .role{
-      margin:28px 0 0 0;
+      margin:26px 0 0 0;
       color:var(--text);
-      font-size:clamp(26px, 3vw, 40px);
+      font-size:clamp(26px, 3vw, 38px);
       line-height:1.18;
       font-weight:850;
       letter-spacing:-.04em;
@@ -188,28 +193,10 @@
 
     .intro{
       margin:20px 0 0 0;
-      max-width:650px;
+      max-width:610px;
       color:var(--muted);
-      font-size:19px;
+      font-size:18px;
       line-height:1.72;
-    }
-
-    .research-line{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:30px;
-    }
-
-    .research-line span{
-      padding:8px 12px;
-      border:1px solid var(--border);
-      border-radius:999px;
-      background:rgba(255,255,255,.045);
-      color:var(--muted);
-      font-size:13px;
-      font-weight:800;
-      backdrop-filter:blur(8px);
     }
 
     .hero-links{
@@ -217,7 +204,7 @@
       align-items:center;
       flex-wrap:wrap;
       gap:12px;
-      margin-top:34px;
+      margin-top:32px;
     }
 
     .icon-link{
@@ -245,10 +232,10 @@
 
     .photo-panel{
       justify-self:end;
-      width:min(390px, 100%);
-      padding:14px;
+      width:min(360px, 100%);
+      padding:13px;
       border:1px solid var(--border);
-      border-radius:32px;
+      border-radius:30px;
       background:rgba(10,12,22,.58);
       box-shadow:var(--shadow);
       backdrop-filter:blur(12px);
@@ -257,7 +244,7 @@
     .photo-panel img{
       width:100%;
       display:block;
-      border-radius:24px;
+      border-radius:22px;
       border:1px solid var(--border);
       background:rgba(255,255,255,.04);
     }
@@ -265,25 +252,25 @@
     .footer{
       width:min(1220px, calc(100% - 56px));
       margin:0 auto;
-      padding:20px 0 30px;
+      padding:18px 0 30px;
       display:flex;
       justify-content:space-between;
       align-items:center;
       gap:20px;
-      color:rgba(170,181,221,.78);
+      color:rgba(170,181,221,.72);
       font-size:13px;
       position:relative;
       z-index:2;
     }
 
     .visitor-counter{
-      max-width:235px;
-      opacity:.66;
+      max-width:220px;
+      opacity:.52;
       transition:opacity .18s ease;
     }
 
     .visitor-counter:hover{
-      opacity:1;
+      opacity:.9;
     }
 
     .visitor-counter img{
@@ -329,7 +316,7 @@
 
       .photo-panel{
         justify-self:start;
-        max-width:340px;
+        max-width:330px;
       }
 
       .footer{
@@ -396,14 +383,6 @@
           I work on interpretable and multimodal machine learning for remote sensing, with a focus on SAR/optical fusion,
           cryosphere monitoring, geospatial foundation models, and trustworthy Earth observation datasets.
         </p>
-
-        <div class="research-line" aria-label="Research keywords">
-          <span>Explainable AI</span>
-          <span>SAR + optical fusion</span>
-          <span>Cryosphere</span>
-          <span>3D-ABC</span>
-          <span>Metadata</span>
-        </div>
 
         <div class="hero-links" aria-label="External profiles">
           <a class="icon-link" href="https://scholar.google.com/citations?user=6i-Npr0AAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
