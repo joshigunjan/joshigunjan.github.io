@@ -219,9 +219,9 @@
 
           <aside class="footprint-panel" aria-label="Research footprint study areas">
             <p class="eyebrow">Study Areas</p>
-            <h3 id="footprint-title">Click a location on the map</h3>
+            <h3 id="footprint-title">Click a region on the map</h3>
             <p id="footprint-description">
-              Select a marker to see the study area, research theme, and related publications.
+              Select a shaded region to see the study area, research theme, and related publications.
             </p>
 
             <div id="footprint-tags" class="footprint-tags"></div>
@@ -255,6 +255,7 @@
         id: "palu",
         name: "Palu, Indonesia",
         coords: [-0.9003, 119.8779],
+        radiusMeters: 170000,
         theme: "Disaster monitoring",
         color: "#fb7185",
         description: "Earthquake damage assessment and significant-feature analysis using multi-sensor satellite data.",
@@ -281,6 +282,7 @@
         id: "imja",
         name: "Imja Glacier, Nepal",
         coords: [27.9006, 86.9295],
+        radiusMeters: 90000,
         theme: "Cryosphere / LULC",
         color: "#7dd3fc",
         description: "Glacier and land-surface classification work using inverse mapping and explainable neural-network analysis.",
@@ -299,17 +301,33 @@
         id: "aletsch",
         name: "Aletsch Glacier, Switzerland",
         coords: [46.4542, 8.0776],
+        radiusMeters: 85000,
         theme: "Cryosphere / multi-sensor EO",
         color: "#7dd3fc",
         description: "Alpine glacier monitoring using optical and SAR data fusion with explainable neural-network methods.",
         links: [
           {
-            label: "EUSAR 2024 · Snow line altitude using optical and SAR data fusion",
-            url: "https://ieeexplore.ieee.org/document/10659607"
-          },
-          {
             label: "JSTARS 2024 · Multisensor glacier surface classification",
             url: "https://doi.org/10.1109/JSTARS.2024.3454789"
+          },
+          {
+            label: "EUSAR 2024 · Snow line altitude using optical and SAR data fusion",
+            url: "https://ieeexplore.ieee.org/document/10659607"
+          }
+        ]
+      },
+      {
+        id: "tomakomai",
+        name: "Tomakomai, Hokkaido, Japan",
+        coords: [42.6341, 141.6055],
+        radiusMeters: 170000,
+        theme: "Complex-valued neural networks / PolSAR",
+        color: "#c084fc",
+        description: "Complex-valued neural-network inverse mapping for explainability in PolSAR/InSAR applications.",
+        links: [
+          {
+            label: "IGARSS 2024 · Complex-valued neural network inverse mapping",
+            url: "https://doi.org/10.1109/IGARSS53475.2024.10640643"
           }
         ]
       },
@@ -317,6 +335,7 @@
         id: "svalbard",
         name: "Svalbard",
         coords: [78.2232, 15.6267],
+        radiusMeters: 360000,
         theme: "Cryosphere mapping",
         color: "#38bdf8",
         description: "Large-scale glacier mapping and lake-terminating glacier inventory work.",
@@ -335,9 +354,10 @@
         id: "jan-mayen",
         name: "Jan Mayen Island",
         coords: [71.0318, -8.2920],
+        radiusMeters: 130000,
         theme: "Cryosphere mapping",
         color: "#38bdf8",
-        description: "Glacier mapping in high-latitude island environments as part of broader cryosphere inventory work.",
+        description: "Glacier mapping in high-latitude island environments as part of the global lake-terminating glacier inventory.",
         links: [
           {
             label: "ESSD 2025 · Global mapping of lake-terminating glaciers",
@@ -353,17 +373,18 @@
         id: "central-himalaya",
         name: "Central Himalaya",
         coords: [30.3753, 79.4636],
-        theme: "Cryosphere / mountain environments",
+        radiusMeters: 390000,
+        theme: "Cryosphere mapping",
         color: "#67e8f9",
-        description: "Mountain-environment and glacier monitoring work connected to explainable AI for Earth observation.",
+        description: "High-mountain glacier mapping connected to the global lake-terminating glacier inventory.",
         links: [
           {
-            label: "JSTARS 2024 · Multisensor glacier surface classification",
-            url: "https://doi.org/10.1109/JSTARS.2024.3454789"
+            label: "ESSD 2025 · Global mapping of lake-terminating glaciers",
+            url: "https://doi.org/10.5194/essd-2025-315"
           },
           {
-            label: "IEEE HTC 2025 · Explainable AI for climate-change monitoring",
-            url: "https://doi.org/10.1109/R10-HTC63995.2025.11394041"
+            label: "Dataset · Lake-terminating glaciers",
+            url: "https://doi.org/10.5281/zenodo.15524734"
           }
         ]
       },
@@ -371,6 +392,7 @@
         id: "amazon",
         name: "Amazon Basin",
         coords: [-3.4653, -62.2159],
+        radiusMeters: 1200000,
         theme: "Geospatial foundation models",
         color: "#86efac",
         description: "Large-scale multimodal foundation model research for above- and below-ground carbon-stock mapping.",
@@ -378,6 +400,10 @@
           {
             label: "IGARSS 2025 · 3D-ABC foundation model",
             url: "https://doi.org/10.1109/IGARSS55030.2025.11242519"
+          },
+          {
+            label: "ESA-NASA FM Workshop 2025 · 3D-ABC permafrost carbon",
+            url: "https://www.3d-abc.ai/files/Hashemi_et_al_3D-ABC_Permafrost_Carbon_ESA_NASA_FM_Workshop.pdf"
           }
         ]
       },
@@ -385,17 +411,18 @@
         id: "arctic",
         name: "Arctic / Permafrost regions",
         coords: [68.5, 95.0],
-        theme: "Foundation models / carbon stocks",
+        radiusMeters: 2200000,
+        theme: "Geospatial foundation models / carbon stocks",
         color: "#a7f3d0",
         description: "Multimodal geospatial foundation model research for permafrost soil carbon-stock estimation.",
         links: [
           {
-            label: "ESA-NASA FM Workshop 2025 · 3D-ABC permafrost carbon",
-            url: "https://www.3d-abc.ai/files/Hashemi_et_al_3D-ABC_Permafrost_Carbon_ESA_NASA_FM_Workshop.pdf"
-          },
-          {
             label: "IGARSS 2025 · 3D-ABC foundation model",
             url: "https://doi.org/10.1109/IGARSS55030.2025.11242519"
+          },
+          {
+            label: "ESA-NASA FM Workshop 2025 · 3D-ABC permafrost carbon",
+            url: "https://www.3d-abc.ai/files/Hashemi_et_al_3D-ABC_Permafrost_Carbon_ESA_NASA_FM_Workshop.pdf"
           }
         ]
       }
@@ -442,17 +469,19 @@
       }
 
       researchSites.forEach((site) => {
-        bounds.push(site.coords);
-
-        const marker = L.circleMarker(site.coords, {
-          radius: 9,
+        const region = L.circle(site.coords, {
+          radius: site.radiusMeters,
           color: site.color,
           weight: 2,
+          opacity: 0.92,
           fillColor: site.color,
-          fillOpacity: 0.72
+          fillOpacity: 0.18,
+          interactive: true
         }).addTo(map);
 
-        marker.bindPopup(`
+        bounds.push(region.getBounds());
+
+        region.bindPopup(`
           <div class="map-popup">
             <strong>${site.name}</strong>
             <span>${site.theme}</span>
@@ -460,10 +489,24 @@
           </div>
         `);
 
-        marker.on("click", () => {
+        region.on("click", () => {
           renderSite(site);
           map.flyTo(site.coords, Math.max(map.getZoom(), 4), {
             duration: 0.7
+          });
+        });
+
+        region.on("mouseover", () => {
+          region.setStyle({
+            fillOpacity: 0.28,
+            weight: 3
+          });
+        });
+
+        region.on("mouseout", () => {
+          region.setStyle({
+            fillOpacity: 0.18,
+            weight: 2
           });
         });
 
@@ -480,13 +523,14 @@
           map.flyTo(site.coords, 4, {
             duration: 0.7
           });
-          marker.openPopup();
+          region.openPopup();
         });
 
         siteList.appendChild(button);
       });
 
-      map.fitBounds(bounds, {
+      const group = L.featureGroup(bounds.map((bound) => L.rectangle(bound, { opacity: 0, fillOpacity: 0 })));
+      map.fitBounds(group.getBounds(), {
         padding: [34, 34]
       });
 
