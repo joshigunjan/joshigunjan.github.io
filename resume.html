@@ -4,499 +4,865 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Resume · Gunjan Joshi</title>
-  <meta name="description" content="Resume snapshot of Gunjan Joshi: machine-learning scientist working on explainable AI, Earth observation, SAR and optical fusion, and geospatial foundation models."/>
+  <meta name="description" content="Resume snapshot of Gunjan Joshi: Machine-Learning Scientist working on explainable AI, Earth observation, SAR and optical fusion, and geospatial foundation models."/>
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://joshigunjan.github.io/resume.html">
   <meta property="og:title" content="Resume · Gunjan Joshi">
-  <meta property="og:description" content="Machine-learning scientist at HZDR working on explainable AI, SAR + optical fusion, and geospatial foundation models for Earth observation.">
+  <meta property="og:description" content="Machine-Learning Scientist working on explainable AI, SAR/optical fusion, and geospatial foundation models for Earth observation.">
   <meta property="og:image" content="https://joshigunjan.github.io/assets/img/og-card.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Resume · Gunjan Joshi">
-  <meta name="twitter:description" content="Machine-learning scientist working on explainable AI, SAR + optical fusion, and geospatial foundation models for Earth observation.">
+  <meta name="twitter:description" content="Machine-Learning Scientist working on explainable AI for Earth observation.">
   <meta name="twitter:image" content="https://joshigunjan.github.io/assets/img/og-card.png">
   <meta name="twitter:site" content="@gunjanjoshi882">
 
-  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
 
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   />
+
+  <style>
+    :root{
+      --bg:#0b1020;
+      --text:#e7ecff;
+      --muted:#aab5dd;
+      --accent:#7aa2ff;
+      --accent2:#5eead4;
+      --panel:rgba(10,12,22,.68);
+      --panel-soft:rgba(255,255,255,.045);
+      --border:rgba(231,236,255,.12);
+      --shadow:0 24px 80px rgba(0,0,0,.48);
+      --shadow-soft:0 12px 34px rgba(0,0,0,.28);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:"Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 700px at 15% 10%, rgba(122,162,255,.18), transparent 58%),
+        radial-gradient(950px 680px at 85% 22%, rgba(94,234,212,.13), transparent 58%),
+        linear-gradient(rgba(5,7,15,.78), rgba(5,7,15,.88)),
+        url("assets/img/aerial-shot-swiss-alps.jpg");
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    .topbar{
+      width:min(1220px, calc(100% - 56px));
+      margin:0 auto;
+      padding:30px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      position:relative;
+      z-index:3;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--text);
+      font-weight:900;
+      letter-spacing:.01em;
+    }
+
+    .brand-mark{
+      width:12px;
+      height:12px;
+      border-radius:999px;
+      background:var(--accent2);
+      box-shadow:0 0 0 7px rgba(94,234,212,.12);
+    }
+
+    .top-nav{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      color:var(--muted);
+      font-size:15px;
+      font-weight:750;
+    }
+
+    .top-nav a{
+      position:relative;
+      padding:8px 0;
+    }
+
+    .top-nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      height:2px;
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform .18s ease;
+    }
+
+    .top-nav a:hover,
+    .top-nav a.active{
+      color:var(--text);
+    }
+
+    .top-nav a:hover::after,
+    .top-nav a.active::after{
+      transform:scaleX(1);
+    }
+
+    .page{
+      width:min(1220px, calc(100% - 56px));
+      margin:0 auto;
+      padding:42px 0 74px;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:32px;
+      margin-bottom:28px;
+      padding:34px;
+      border:1px solid var(--border);
+      border-radius:28px;
+      background:var(--panel);
+      box-shadow:var(--shadow-soft);
+      backdrop-filter:blur(12px);
+    }
+
+    .eyebrow{
+      margin:0 0 14px 0;
+      color:var(--accent2);
+      font-size:13px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:950;
+    }
+
+    h1{
+      margin:0;
+      color:var(--text);
+      font-family:"Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+      font-size:clamp(46px, 6vw, 78px);
+      line-height:1.02;
+      letter-spacing:-.055em;
+      font-weight:800;
+    }
+
+    .lead{
+      margin:18px 0 0 0;
+      max-width:780px;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.7;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid rgba(94,234,212,.45);
+      background:rgba(94,234,212,.10);
+      color:var(--text);
+      font-size:14px;
+      font-weight:850;
+      white-space:nowrap;
+      transition:transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      background:rgba(94,234,212,.16);
+      border-color:rgba(94,234,212,.62);
+    }
+
+    .section{
+      margin-top:24px;
+      padding:30px;
+      border:1px solid var(--border);
+      border-radius:26px;
+      background:var(--panel);
+      box-shadow:var(--shadow-soft);
+      backdrop-filter:blur(12px);
+    }
+
+    .section h2{
+      margin:0 0 20px 0;
+      color:var(--text);
+      font-family:"Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+      font-size:31px;
+      line-height:1.2;
+      letter-spacing:-.035em;
+      font-weight:800;
+    }
+
+    .timeline{
+      position:relative;
+      padding-left:22px;
+    }
+
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left:6px;
+      top:8px;
+      bottom:8px;
+      width:2px;
+      background:linear-gradient(180deg, rgba(122,162,255,.44), rgba(94,234,212,.54));
+      border-radius:99px;
+    }
+
+    .item{
+      position:relative;
+      padding-left:24px;
+      margin:0 0 30px 0;
+    }
+
+    .item:last-child{
+      margin-bottom:0;
+    }
+
+    .dot{
+      position:absolute;
+      left:-23px;
+      top:6px;
+      width:14px;
+      height:14px;
+      border-radius:999px;
+      background:var(--accent2);
+      box-shadow:0 0 0 6px rgba(94,234,212,.11);
+    }
+
+    .role{
+      margin:0;
+      color:var(--accent2);
+      font-size:14px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-weight:950;
+      line-height:1.35;
+    }
+
+    .date{
+      display:inline-block;
+      margin-top:10px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(122,162,255,.30);
+      background:rgba(122,162,255,.08);
+      color:var(--text);
+      font-size:13px;
+      font-weight:800;
+    }
+
+    .desc{
+      margin:12px 0 0 0;
+      color:var(--muted);
+      font-size:15.5px;
+      line-height:1.7;
+    }
+
+    .desc strong,
+    .label{
+      color:var(--text);
+      font-weight:850;
+    }
+
+    .bullets{
+      margin:12px 0 0 18px;
+      color:var(--muted);
+      padding:0;
+    }
+
+    .bullets li{
+      margin:6px 0;
+      line-height:1.65;
+    }
+
+    .tabbar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:-4px 0 18px 0;
+    }
+
+    .tab{
+      cursor:pointer;
+      user-select:none;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.045);
+      color:var(--muted);
+      font-size:13px;
+      font-weight:850;
+    }
+
+    .tab.active{
+      color:var(--text);
+      border-color:rgba(94,234,212,.45);
+      background:rgba(94,234,212,.10);
+    }
+
+    .pillgrid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:16px;
+    }
+
+    .pill{
+      padding:18px;
+      border:1px solid var(--border);
+      border-radius:18px;
+      background:var(--panel-soft);
+      transition:transform .16s ease, border-color .16s ease, background .16s ease;
+    }
+
+    .pill:hover{
+      transform:translateY(-2px);
+      border-color:rgba(94,234,212,.38);
+      background:rgba(94,234,212,.06);
+    }
+
+    .pill-title{
+      margin:0;
+      color:var(--text);
+      font-size:16px;
+      font-weight:900;
+      line-height:1.4;
+    }
+
+    .pill-meta{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:14.5px;
+      line-height:1.6;
+    }
+
+    .footer{
+      width:min(1220px, calc(100% - 56px));
+      margin:0 auto;
+      padding:20px 0 32px;
+      color:rgba(170,181,221,.72);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      position:relative;
+      z-index:2;
+    }
+
+    .visitor-counter{
+      max-width:220px;
+      opacity:.52;
+      transition:opacity .18s ease;
+    }
+
+    .visitor-counter:hover{
+      opacity:.9;
+    }
+
+    .visitor-counter img{
+      display:block;
+      max-width:100%;
+      height:auto;
+      border:0;
+      border-radius:8px;
+    }
+
+    @media (max-width:900px){
+      body{background-attachment:scroll}
+
+      .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .top-nav{
+        flex-wrap:wrap;
+        gap:18px;
+      }
+
+      .hero{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .pillgrid{
+        grid-template-columns:1fr;
+      }
+
+      .footer{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+
+    @media (max-width:560px){
+      .topbar,
+      .page,
+      .footer{
+        width:min(100% - 32px, 1220px);
+      }
+
+      .page{
+        padding-top:30px;
+      }
+
+      .hero,
+      .section{
+        padding:22px;
+      }
+
+      h1{
+        font-size:44px;
+      }
+
+      .lead{
+        font-size:17px;
+      }
+
+      .top-nav{
+        font-size:14px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="layout">
 
-      <aside class="sidebar">
-        <div class="side-top">
-          <img class="avatar" src="assets/img/Gunjan-Joshi-2.png" alt="Gunjan Joshi profile photo"/>
+  <header class="topbar">
+    <a class="brand" href="home.html" aria-label="Gunjan Joshi home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Gunjan Joshi</span>
+    </a>
 
-          <h2 class="name">Gunjan Joshi</h2>
+    <nav class="top-nav" aria-label="Primary">
+      <a href="home.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a class="active" href="resume.html">Resume</a>
+      <a href="research.html">Research</a>
+    </nav>
+  </header>
 
-          <p class="tagline">
-            Machine-Learning Scientist<br/>
-            Explainable AI · Remote Sensing · Foundation Models
-          </p>
+  <main class="page">
 
-          <div class="badges">
-            <span class="badge">Explainable AI</span>
-            <span class="badge">Remote sensing</span>
-            <span class="badge">SAR + optical fusion</span>
-            <span class="badge">Foundation models</span>
-          </div>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Resume</p>
+        <h1>CV Snapshot</h1>
+        <p class="lead">
+          A concise overview of my professional experience, education, grants, supervision, teaching, invited talks, and academic service.
+        </p>
+      </div>
+
+      <a class="btn" href="assets/GunjanJoshi_CV.pdf" target="_blank" rel="noopener">
+        <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+        Download CV
+      </a>
+    </section>
+
+    <section class="section">
+      <h2>Professional Experience</h2>
+
+      <div class="timeline">
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Machine-Learning Scientist</h3>
+          <span class="date">Oct 2024 – Present</span>
+          <p class="desc"><span class="label">Institute:</span> Helmholtz-Zentrum Dresden-Rossendorf, Dresden, Germany</p>
+          <p class="desc"><span class="label">Project:</span> 3D-ABC Foundation Model, Helmholtz Foundation Model Initiative</p>
+          <p class="desc"><span class="label">Supervisors:</span> Dr. Peter Steinbach &amp; Prof. Dr. Pedram Ghamisi</p>
         </div>
 
-        <nav class="nav" aria-label="Primary">
-          <a href="index.html">Home</a>
-          <a class="active" href="resume.html">Resume</a>
-          <a href="research.html">Research</a>
-        </nav>
-
-        <div class="side-links icon-row">
-          <a class="icon-btn icon-only" href="https://scholar.google.com/citations?user=6i-Npr0AAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
-            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-            <span class="sr-only">Google Scholar</span>
-          </a>
-
-          <a class="icon-btn icon-only" href="https://orcid.org/0000-0001-6092-1408" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID">
-            <i class="fa-brands fa-orcid" aria-hidden="true"></i>
-            <span class="sr-only">ORCID</span>
-          </a>
-
-          <a class="icon-btn icon-only" href="https://twitter.com/gunjanjoshi882" target="_blank" rel="noopener" aria-label="X / Twitter" title="X / Twitter">
-            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-            <span class="sr-only">X / Twitter</span>
-          </a>
-
-          <a class="icon-btn icon-only" href="https://www.linkedin.com/in/gunjan-joshi-793603197/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
-            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
-            <span class="sr-only">LinkedIn</span>
-          </a>
-
-          <a class="icon-btn icon-only" href="https://github.com/joshigunjan" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
-            <i class="fa-brands fa-github" aria-hidden="true"></i>
-            <span class="sr-only">GitHub</span>
-          </a>
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Guest Scientist</h3>
+          <span class="date">Feb 2023 – Mar 2023</span>
+          <p class="desc"><span class="label">Institute:</span> German Aerospace Center, DLR, Munich, Germany</p>
+          <p class="desc"><span class="label">Project:</span> Multi-sensor, multi-temporal mapping of Swiss Alpine glaciers using explainable AI</p>
+          <p class="desc"><span class="label">Supervisor:</span> Dr. Andreas J. Dietz</p>
         </div>
 
-        <div style="margin-top:10px; padding:12px; border-radius:14px; border:1px solid var(--border); background:rgba(255,255,255,.03); overflow:auto;">
-          <a href="https://info.flagcounter.com/4ujz" target="_blank" rel="noopener">
-            <img
-              src="https://s05.flagcounter.com/count2/4ujz/bg_13151F/txt_D6D6D6/border_13151F/columns_4/maxflags_30/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
-              alt="Flag Counter"
-              style="display:block; border:0; max-width:100%; height:auto;"
-            >
-          </a>
-        </div>
-      </aside>
-
-      <main class="main">
-        <header class="header">
-          <div class="resume-top">
-            <div>
-              <div class="kicker">Resume</div>
-              <h1 class="section-title">CV Snapshot</h1>
-            </div>
-
-            <a class="btn primary" href="assets/GunjanJoshi_CV.pdf" target="_blank" rel="noopener">Download CV</a>
-          </div>
-        </header>
-
-        <div class="content">
-          <div class="resume-stack">
-
-            <section class="section-block">
-              <h2>Professional Experience</h2>
-
-              <div class="timeline">
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Machine-Learning Scientist</h3>
-                  <span class="date">Oct 2024 – Present</span>
-                  <p class="desc"><span class="label">Institute:</span> Helmholtz-Zentrum Dresden-Rossendorf, Dresden, Germany</p>
-                  <p class="desc"><span class="label">Project:</span> 3D-ABC Foundation Model, Helmholtz Foundation Model Initiative</p>
-                  <p class="desc"><span class="label">Supervisors:</span> Dr. Peter Steinbach &amp; Prof. Dr. Pedram Ghamisi</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Guest Scientist</h3>
-                  <span class="date">Feb 2023 – Mar 2023</span>
-                  <p class="desc"><span class="label">Institute:</span> German Aerospace Center, DLR, Munich, Germany</p>
-                  <p class="desc"><span class="label">Project:</span> Multi-sensor, multi-temporal mapping of Swiss Alpine glaciers using explainable AI</p>
-                  <p class="desc"><span class="label">Supervisor:</span> Dr. Andreas J. Dietz</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Research Scholar</h3>
-                  <span class="date">Apr 2018 – Sept 2019</span>
-                  <p class="desc"><span class="label">Institute:</span> The University of Tokyo, Tokyo, Japan</p>
-                  <p class="desc"><span class="label">Department:</span> Electrical Engineering and Information Systems</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">RF Engineer</h3>
-                  <span class="date">Dec 2016 – Mar 2018</span>
-                  <p class="desc"><span class="label">Company:</span> TATA Advanced Systems, Bangalore, India</p>
-                  <p class="desc">RF systems engineering.</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Network Engineer</h3>
-                  <span class="date">Jul 2016 – Dec 2016</span>
-                  <p class="desc"><span class="label">Company:</span> Ericsson Global, Bangalore, India</p>
-                  <p class="desc">Telecom network operations and engineering.</p>
-                </div>
-
-              </div>
-            </section>
-
-            <section class="section-block">
-              <h2>Education</h2>
-
-              <div class="timeline">
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Ph.D. · Electrical Engineering and Information Systems</h3>
-                  <span class="date">Oct 2021 – Sept 2024</span>
-                  <p class="desc"><span class="label">Institute:</span> The University of Tokyo, Tokyo, Japan</p>
-                  <p class="desc"><span class="label">Thesis:</span> Inverse Mapping for Neural Network Explainability and its Applications in Earth Observation</p>
-                  <p class="desc"><span class="label">Advisors:</span> Prof. Akira Hirose &amp; Assoc. Prof. Ryo Natsuaki</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">M.Eng. · Electrical Engineering and Information Systems</h3>
-                  <span class="date">Oct 2019 – Sept 2021</span>
-                  <p class="desc"><span class="label">Institute:</span> The University of Tokyo, Tokyo, Japan</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">B.Eng. · Electronics &amp; Communication Engineering</h3>
-                  <span class="date">Sept 2012 – Jul 2016</span>
-                  <p class="desc"><span class="label">Institute:</span> Visvesvaraya Technological University, Bangalore, India</p>
-                </div>
-
-              </div>
-            </section>
-
-            <section class="section-block">
-              <h2>Student Supervision</h2>
-
-              <div class="timeline">
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Master’s Thesis Supervisor · Audita Widya Astuti</h3>
-                  <span class="date">Apr 2026 – Present</span>
-                  <p class="desc"><span class="label">Thesis:</span> Cross-Modalities Pretraining of Sparse LiDAR and Dense Image Foundation Model for Global Carbon Stock Mapping</p>
-                  <p class="desc"><span class="label">Focus:</span> sparse LiDAR, dense optical imagery, cross-modal self-supervised pretraining, geospatial foundation models, and global carbon stock mapping.</p>
-                </div>
-
-              </div>
-            </section>
-
-            <section class="section-block">
-              <h2>Recognitions, Awards &amp; Grants</h2>
-
-              <div class="tabbar" data-award-tabs>
-                <span class="tab active" data-filter="all">All</span>
-                <span class="tab" data-filter="award">Awards</span>
-                <span class="tab" data-filter="grant">Grants</span>
-                <span class="tab" data-filter="scholarship">Scholarships</span>
-              </div>
-
-              <div class="pillgrid">
-
-                <div class="pill" data-award="grant">
-                  <p class="pill-title">Horizon Europe PROTEUS</p>
-                  <p class="pill-meta">The Copernicus Agent for Next-Generation Environmental Intelligence · Successfully funded Horizon Europe project · Jan 2026</p>
-                  <p class="pill-meta">Scientific and technical writing contributor and project team member.</p>
-                </div>
-
-                <div class="pill" data-award="scholarship">
-                  <p class="pill-title">MEXT Monbukagakusho Scholarship</p>
-                  <p class="pill-meta">Japanese Government · 2018–2024</p>
-                </div>
-
-                <div class="pill" data-award="award">
-                  <p class="pill-title">First Prize · IEEE IGARSS 3MT Competition</p>
-                  <p class="pill-meta">Three Minutes Thesis Competition · 2022</p>
-                </div>
-
-                <div class="pill" data-award="award">
-                  <p class="pill-title">Rising Stars Women in Engineering</p>
-                  <p class="pill-meta">The University of Tokyo · 2023</p>
-                </div>
-
-                <div class="pill" data-award="award">
-                  <p class="pill-title">Best Poster Award</p>
-                  <p class="pill-meta">Department of EEIS, The University of Tokyo · 2023</p>
-                </div>
-
-                <div class="pill" data-award="award">
-                  <p class="pill-title">JSPRS Award</p>
-                  <p class="pill-meta">Asian Conference on Remote Sensing · 2021</p>
-                </div>
-
-                <div class="pill" data-award="grant">
-                  <p class="pill-title">RESTEC Research Grant</p>
-                  <p class="pill-meta">Principal Investigator · 1M JPY · 2023</p>
-                </div>
-
-                <div class="pill" data-award="grant">
-                  <p class="pill-title">IEEE-GRSS IDEA Professional Development Microgrant</p>
-                  <p class="pill-meta">Professional development support</p>
-                </div>
-
-                <div class="pill" data-award="grant">
-                  <p class="pill-title">Overseas Research Training Grant</p>
-                  <p class="pill-meta">Musha Shugyo · The University of Tokyo · 2023</p>
-                </div>
-
-              </div>
-            </section>
-
-            <section class="section-block">
-              <h2>Memberships</h2>
-
-              <div class="timeline">
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">IEEE · Senior Member</h3>
-                  <span class="date">Elevated 2026</span>
-                  <p class="desc">Senior Member grade in IEEE, the Institute of Electrical and Electronics Engineers.</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">IEEE Geoscience and Remote Sensing Society</h3>
-                  <span class="date">Member</span>
-                  <p class="desc">Society membership within IEEE. Leadership and service roles are listed under Academic Services.</p>
-                </div>
-
-              </div>
-            </section>
-
-            <section class="section-block">
-              <h2>Academic Services</h2>
-
-              <div class="timeline">
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Editorial Board · Co-Editor</h3>
-                  <span class="date">Mar 2026 – Present</span>
-                  <p class="desc"><span class="label">Journal:</span> Frontiers in Imaging, Special Edition on “Advanced Spatio-spectral Processing of Hyperspectral Images in Diverse Applications”</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Editorial Board · Column Editor</h3>
-                  <span class="date">Mar 2025 – Present</span>
-                  <p class="desc"><span class="label">Journal:</span> IEEE Geoscience and Remote Sensing Magazine</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Session Chair · IGARSS 2025</h3>
-                  <span class="date">Aug 2025</span>
-                  <ul class="bullets">
-                    <li>MO3.M2 — Advancements in Deep Learning for SAR Remote Sensing Applications I</li>
-                    <li>MO4.M2 — Advancements in Deep Learning for SAR Remote Sensing Applications II</li>
-                    <li>TUP1.PA — Advancements in Deep Learning for SAR Remote Sensing Applications III</li>
-                  </ul>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Digital Engagement Team Lead</h3>
-                  <span class="date">Oct 2024 – Present</span>
-                  <p class="desc"><span class="label">Organization:</span> IEEE Geoscience and Remote Sensing Society</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Webinar Strategist</h3>
-                  <span class="date">Jul 2024 – Present</span>
-                  <p class="desc"><span class="label">Organization:</span> IEEE Geoscience and Remote Sensing Society</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Social Media Ambassador</h3>
-                  <span class="date">Mar 2023 – Jul 2024</span>
-                  <p class="desc"><span class="label">Organization:</span> IEEE Geoscience and Remote Sensing Society</p>
-                </div>
-
-              </div>
-            </section>
-
-            <section class="section-block">
-              <h2>Teaching and Training Activities</h2>
-
-              <div class="timeline">
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Course Instructor · Introduction to Explainable AI</h3>
-                  <span class="date">May 2026</span>
-                  <p class="desc"><span class="label">Program:</span> HIDA, Helmholtz Information and Data Science Academy</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Speaker · HZDR PhD Students’ Writing Sprint</h3>
-                  <span class="date">May 2026</span>
-                  <p class="desc">Talk on “Use of Modern Large Language Models to Support Your Scientific Writing”.</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Trainer · HPC-Gateway Fall School</h3>
-                  <span class="date">Nov 2025</span>
-                  <p class="desc">Delivered sessions on machine learning.</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Speaker · HZDR PhD Students’ Writing Sprint</h3>
-                  <span class="date">Nov 2025</span>
-                  <p class="desc">Talk on “Use of Modern Large Language Models to Support Your Scientific Writing”.</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Course Instructor · Introduction to Deep Learning</h3>
-                  <span class="date">Oct 2025</span>
-                  <p class="desc"><span class="label">Program:</span> HIDA, Helmholtz Information and Data Science Academy</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Course Instructor · Introduction to Machine Learning</h3>
-                  <span class="date">Apr 2025</span>
-                  <p class="desc"><span class="label">Program:</span> HIDA, Helmholtz Information and Data Science Academy</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Teaching Assistant · Advanced Academic Writing and Presentation</h3>
-                  <span class="date">2020 – 2024</span>
-                  <p class="desc"><span class="label">Institute:</span> School of Engineering, The University of Tokyo</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Academic Writing Consultant · English Writing Center</h3>
-                  <span class="date">2020 – 2024</span>
-                  <p class="desc"><span class="label">Institute:</span> School of Engineering, The University of Tokyo</p>
-                </div>
-
-              </div>
-            </section>
-
-            <section class="section-block">
-              <h2>Invited Talks</h2>
-
-              <div class="timeline">
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Invited Talk · Humboldt University of Berlin</h3>
-                  <span class="date">Apr 2026</span>
-                  <p class="desc">“From Models to Trust: Building Explainable and Responsible AI for Earth Observation”.</p>
-                  <p class="desc"><span class="label">Location:</span> Berlin, Germany</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Invited Talk · Acharya Institutes</h3>
-                  <span class="date">Jan 2026</span>
-                  <p class="desc">“From Drafting to Revision: Using Modern LLMs in Scientific Writing”.</p>
-                  <p class="desc"><span class="label">Location:</span> Bangalore, India</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Invited Talk · IIIT Bangalore</h3>
-                  <span class="date">Jan 2026</span>
-                  <p class="desc">“Opening the Black Box: Understanding Multi-Sensor Fusion through Explainable AI”.</p>
-                  <p class="desc"><span class="label">Location:</span> Bengaluru, India</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Invited Speaker · IEEE GRSS Young Professionals Summit</h3>
-                  <span class="date">Dec 2025</span>
-                  <p class="desc">“Advancing Earth Observation with Foundation Models”.</p>
-                  <p class="desc"><span class="label">Location:</span> Colombo, Sri Lanka</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Invited Speaker · IEEE GRSS Sri Lanka Chapter</h3>
-                  <span class="date">Oct 2025</span>
-                  <p class="desc">“Making Sense of Sensors: Using Explainable AI for Multi-Sensor Data Fusion”.</p>
-                  <p class="desc"><span class="label">Location:</span> Colombo, Sri Lanka</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Invited Speaker · IGARSS 2025 Tutorial</h3>
-                  <span class="date">Aug 2025</span>
-                  <p class="desc">Tutorial: “Machine Learning-Based Integration of Optical and SAR Data for Monitoring Earth’s Dynamic Processes”.</p>
-                  <p class="desc">Talk: “Explainable AI and Its Applications in Multi-Sensor Earth Observation”.</p>
-                  <p class="desc"><span class="label">Location:</span> Brisbane, Australia</p>
-                </div>
-
-                <div class="item">
-                  <span class="dot"></span>
-                  <h3 class="role">Invited Speaker · The University of Melbourne</h3>
-                  <span class="date">Dec 2024</span>
-                  <p class="desc">Lecture on “Explainable AI and Its Applications in Earth Observation”.</p>
-                  <p class="desc"><span class="label">Location:</span> Melbourne, Australia</p>
-                </div>
-
-              </div>
-            </section>
-
-            <section class="section-block">
-              <h2>Reviewer</h2>
-
-              <div class="pillgrid">
-                <div class="pill"><p class="pill-title">International Geoscience and Remote Sensing Symposium, IGARSS 2026</p></div>
-                <div class="pill"><p class="pill-title">IEEE Open Journal of the Computer Society</p></div>
-                <div class="pill"><p class="pill-title">IEEE Geoscience and Remote Sensing Magazine</p></div>
-                <div class="pill"><p class="pill-title">European Journal of Remote Sensing</p></div>
-                <div class="pill"><p class="pill-title">IEEE Transactions on Geoscience and Remote Sensing</p></div>
-                <div class="pill"><p class="pill-title">IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</p></div>
-                <div class="pill"><p class="pill-title">Helmholtz AI Conference 2025</p></div>
-                <div class="pill"><p class="pill-title">Elsevier Advances in Space Research</p></div>
-                <div class="pill"><p class="pill-title">Asia-Pacific Conference on Synthetic Aperture Radar, APSAR 2023</p></div>
-              </div>
-            </section>
-
-          </div>
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Research Scholar</h3>
+          <span class="date">Apr 2018 – Sept 2019</span>
+          <p class="desc"><span class="label">Institute:</span> The University of Tokyo, Tokyo, Japan</p>
+          <p class="desc"><span class="label">Department:</span> Electrical Engineering and Information Systems</p>
         </div>
 
-        <div class="footer">
-          <span>© 2026 Gunjan Joshi</span>
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">RF Engineer</h3>
+          <span class="date">Dec 2016 – Mar 2018</span>
+          <p class="desc"><span class="label">Company:</span> TATA Advanced Systems, Bangalore, India</p>
+          <p class="desc">RF systems engineering.</p>
         </div>
 
-      </main>
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Network Engineer</h3>
+          <span class="date">Jul 2016 – Dec 2016</span>
+          <p class="desc"><span class="label">Company:</span> Ericsson Global, Bangalore, India</p>
+          <p class="desc">Telecom network operations and engineering.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Education</h2>
+
+      <div class="timeline">
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Ph.D. · Electrical Engineering and Information Systems</h3>
+          <span class="date">Oct 2021 – Sept 2024</span>
+          <p class="desc"><span class="label">Institute:</span> The University of Tokyo, Tokyo, Japan</p>
+          <p class="desc"><span class="label">Thesis:</span> Inverse Mapping for Neural Network Explainability and its Applications in Earth Observation</p>
+          <p class="desc"><span class="label">Advisors:</span> Prof. Akira Hirose &amp; Assoc. Prof. Ryo Natsuaki</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">M.Eng. · Electrical Engineering and Information Systems</h3>
+          <span class="date">Oct 2019 – Sept 2021</span>
+          <p class="desc"><span class="label">Institute:</span> The University of Tokyo, Tokyo, Japan</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">B.Eng. · Electronics &amp; Communication Engineering</h3>
+          <span class="date">Sept 2012 – Jul 2016</span>
+          <p class="desc"><span class="label">Institute:</span> Visvesvaraya Technological University, Bangalore, India</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Student Supervision</h2>
+
+      <div class="timeline">
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Master’s Thesis Supervisor · Audita Widya Astuti</h3>
+          <span class="date">Apr 2026 – Present</span>
+          <p class="desc"><span class="label">Thesis:</span> Cross-Modalities Pretraining of Sparse LiDAR and Dense Image Foundation Model for Global Carbon Stock Mapping</p>
+          <p class="desc"><span class="label">Focus:</span> sparse LiDAR, dense optical imagery, cross-modal self-supervised pretraining, geospatial foundation models, and global carbon stock mapping.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Recognitions, Awards &amp; Grants</h2>
+
+      <div class="tabbar" data-award-tabs>
+        <span class="tab active" data-filter="all">All</span>
+        <span class="tab" data-filter="award">Awards</span>
+        <span class="tab" data-filter="grant">Grants</span>
+        <span class="tab" data-filter="scholarship">Scholarships</span>
+      </div>
+
+      <div class="pillgrid">
+        <div class="pill" data-award="grant">
+          <p class="pill-title">Horizon Europe PROTEUS</p>
+          <p class="pill-meta">The Copernicus Agent for Next-Generation Environmental Intelligence · Successfully funded Horizon Europe project · Jan 2026</p>
+          <p class="pill-meta">Scientific and technical writing contributor and project team member.</p>
+        </div>
+
+        <div class="pill" data-award="scholarship">
+          <p class="pill-title">MEXT Monbukagakusho Scholarship</p>
+          <p class="pill-meta">Japanese Government · 2018–2024</p>
+        </div>
+
+        <div class="pill" data-award="award">
+          <p class="pill-title">First Prize · IEEE IGARSS 3MT Competition</p>
+          <p class="pill-meta">Three Minutes Thesis Competition · 2022</p>
+        </div>
+
+        <div class="pill" data-award="award">
+          <p class="pill-title">Rising Stars Women in Engineering</p>
+          <p class="pill-meta">The University of Tokyo · 2023</p>
+        </div>
+
+        <div class="pill" data-award="award">
+          <p class="pill-title">Best Poster Award</p>
+          <p class="pill-meta">Department of EEIS, The University of Tokyo · 2023</p>
+        </div>
+
+        <div class="pill" data-award="award">
+          <p class="pill-title">JSPRS Award</p>
+          <p class="pill-meta">Asian Conference on Remote Sensing · 2021</p>
+        </div>
+
+        <div class="pill" data-award="grant">
+          <p class="pill-title">RESTEC Research Grant</p>
+          <p class="pill-meta">Principal Investigator · 1M JPY · 2023</p>
+        </div>
+
+        <div class="pill" data-award="grant">
+          <p class="pill-title">IEEE-GRSS IDEA Professional Development Microgrant</p>
+          <p class="pill-meta">Professional development support</p>
+        </div>
+
+        <div class="pill" data-award="grant">
+          <p class="pill-title">Overseas Research Training Grant</p>
+          <p class="pill-meta">Musha Shugyo · The University of Tokyo · 2023</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Memberships</h2>
+
+      <div class="timeline">
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">IEEE · Senior Member</h3>
+          <span class="date">Elevated 2026</span>
+          <p class="desc">Senior Member grade in IEEE, the Institute of Electrical and Electronics Engineers.</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">IEEE Geoscience and Remote Sensing Society</h3>
+          <span class="date">Member</span>
+          <p class="desc">Society membership within IEEE. Leadership and service roles are listed under Academic Services.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Academic Services</h2>
+
+      <div class="timeline">
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Editorial Board · Co-Editor</h3>
+          <span class="date">Mar 2026 – Present</span>
+          <p class="desc"><span class="label">Journal:</span> Frontiers in Imaging, Special Edition on “Advanced Spatio-spectral Processing of Hyperspectral Images in Diverse Applications”</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Editorial Board · Column Editor</h3>
+          <span class="date">Mar 2025 – Present</span>
+          <p class="desc"><span class="label">Journal:</span> IEEE Geoscience and Remote Sensing Magazine</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Session Chair · IGARSS 2025</h3>
+          <span class="date">Aug 2025</span>
+          <ul class="bullets">
+            <li>MO3.M2 — Advancements in Deep Learning for SAR Remote Sensing Applications I</li>
+            <li>MO4.M2 — Advancements in Deep Learning for SAR Remote Sensing Applications II</li>
+            <li>TUP1.PA — Advancements in Deep Learning for SAR Remote Sensing Applications III</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Digital Engagement Team Lead</h3>
+          <span class="date">Oct 2024 – Present</span>
+          <p class="desc"><span class="label">Organization:</span> IEEE Geoscience and Remote Sensing Society</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Webinar Strategist</h3>
+          <span class="date">Jul 2024 – Present</span>
+          <p class="desc"><span class="label">Organization:</span> IEEE Geoscience and Remote Sensing Society</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Social Media Ambassador</h3>
+          <span class="date">Mar 2023 – Jul 2024</span>
+          <p class="desc"><span class="label">Organization:</span> IEEE Geoscience and Remote Sensing Society</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Teaching and Training Activities</h2>
+
+      <div class="timeline">
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Course Instructor · Introduction to Explainable AI</h3>
+          <span class="date">May 2026</span>
+          <p class="desc"><span class="label">Program:</span> HIDA, Helmholtz Information and Data Science Academy</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Speaker · HZDR PhD Students’ Writing Sprint</h3>
+          <span class="date">May 2026</span>
+          <p class="desc">Talk on “Use of Modern Large Language Models to Support Your Scientific Writing”.</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Trainer · HPC-Gateway Fall School</h3>
+          <span class="date">Nov 2025</span>
+          <p class="desc">Delivered sessions on machine learning.</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Speaker · HZDR PhD Students’ Writing Sprint</h3>
+          <span class="date">Nov 2025</span>
+          <p class="desc">Talk on “Use of Modern Large Language Models to Support Your Scientific Writing”.</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Course Instructor · Introduction to Deep Learning</h3>
+          <span class="date">Oct 2025</span>
+          <p class="desc"><span class="label">Program:</span> HIDA, Helmholtz Information and Data Science Academy</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Course Instructor · Introduction to Machine Learning</h3>
+          <span class="date">Apr 2025</span>
+          <p class="desc"><span class="label">Program:</span> HIDA, Helmholtz Information and Data Science Academy</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Teaching Assistant · Advanced Academic Writing and Presentation</h3>
+          <span class="date">2020 – 2024</span>
+          <p class="desc"><span class="label">Institute:</span> School of Engineering, The University of Tokyo</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Academic Writing Consultant · English Writing Center</h3>
+          <span class="date">2020 – 2024</span>
+          <p class="desc"><span class="label">Institute:</span> School of Engineering, The University of Tokyo</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Invited Talks</h2>
+
+      <div class="timeline">
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Invited Talk · Humboldt University of Berlin</h3>
+          <span class="date">Apr 2026</span>
+          <p class="desc">“From Models to Trust: Building Explainable and Responsible AI for Earth Observation”.</p>
+          <p class="desc"><span class="label">Location:</span> Berlin, Germany</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Invited Talk · Acharya Institutes</h3>
+          <span class="date">Jan 2026</span>
+          <p class="desc">“From Drafting to Revision: Using Modern LLMs in Scientific Writing”.</p>
+          <p class="desc"><span class="label">Location:</span> Bangalore, India</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Invited Talk · IIIT Bangalore</h3>
+          <span class="date">Jan 2026</span>
+          <p class="desc">“Opening the Black Box: Understanding Multi-Sensor Fusion through Explainable AI”.</p>
+          <p class="desc"><span class="label">Location:</span> Bengaluru, India</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Invited Speaker · IEEE GRSS Young Professionals Summit</h3>
+          <span class="date">Dec 2025</span>
+          <p class="desc">“Advancing Earth Observation with Foundation Models”.</p>
+          <p class="desc"><span class="label">Location:</span> Colombo, Sri Lanka</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Invited Speaker · IEEE GRSS Sri Lanka Chapter</h3>
+          <span class="date">Oct 2025</span>
+          <p class="desc">“Making Sense of Sensors: Using Explainable AI for Multi-Sensor Data Fusion”.</p>
+          <p class="desc"><span class="label">Location:</span> Colombo, Sri Lanka</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Invited Speaker · IGARSS 2025 Tutorial</h3>
+          <span class="date">Aug 2025</span>
+          <p class="desc">Tutorial: “Machine Learning-Based Integration of Optical and SAR Data for Monitoring Earth’s Dynamic Processes”.</p>
+          <p class="desc">Talk: “Explainable AI and Its Applications in Multi-Sensor Earth Observation”.</p>
+          <p class="desc"><span class="label">Location:</span> Brisbane, Australia</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3 class="role">Invited Speaker · The University of Melbourne</h3>
+          <span class="date">Dec 2024</span>
+          <p class="desc">Lecture on “Explainable AI and Its Applications in Earth Observation”.</p>
+          <p class="desc"><span class="label">Location:</span> Melbourne, Australia</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Reviewer</h2>
+
+      <div class="pillgrid">
+        <div class="pill"><p class="pill-title">International Geoscience and Remote Sensing Symposium, IGARSS 2026</p></div>
+        <div class="pill"><p class="pill-title">IEEE Open Journal of the Computer Society</p></div>
+        <div class="pill"><p class="pill-title">IEEE Geoscience and Remote Sensing Magazine</p></div>
+        <div class="pill"><p class="pill-title">European Journal of Remote Sensing</p></div>
+        <div class="pill"><p class="pill-title">IEEE Transactions on Geoscience and Remote Sensing</p></div>
+        <div class="pill"><p class="pill-title">IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</p></div>
+        <div class="pill"><p class="pill-title">Helmholtz AI Conference 2025</p></div>
+        <div class="pill"><p class="pill-title">Elsevier Advances in Space Research</p></div>
+        <div class="pill"><p class="pill-title">Asia-Pacific Conference on Synthetic Aperture Radar, APSAR 2023</p></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Gunjan Joshi</span>
+
+    <div class="visitor-counter" aria-label="Visitor counter">
+      <a href="https://info.flagcounter.com/4ujz" target="_blank" rel="noopener">
+        <img
+          src="https://s05.flagcounter.com/count2/4ujz/bg_0B1020/txt_AAB5DD/border_0B1020/columns_4/maxflags_20/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+          alt="Flag Counter"
+        >
+      </a>
     </div>
-  </div>
+  </footer>
 
   <script src="assets/js/main.js"></script>
 </body>
