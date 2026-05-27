@@ -544,3 +544,191 @@ small{color:var(--muted)}
   background: rgba(255,255,255,0.02);
 }
 .pub-mini:hover{ text-decoration: underline; }
+
+/* =========================================================
+   Connected experience cards for homepage
+   ========================================================= */
+
+.section-heading-row{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:16px;
+}
+
+.section-title-sm{
+  margin:4px 0 0 0;
+  font-size:26px;
+  line-height:1.2;
+}
+
+.section-note{
+  margin:0;
+  max-width:34ch;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.experience-section{
+  margin-top:4px;
+}
+
+.experience-map{
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:18px;
+  padding:8px 0;
+}
+
+/* Soft connector background */
+.experience-map::before{
+  content:"";
+  position:absolute;
+  inset:30px 18px 30px 18px;
+  border:1px solid rgba(94,234,212,.20);
+  border-radius:24px;
+  background:
+    linear-gradient(90deg, transparent 0%, rgba(122,162,255,.18) 18%, rgba(94,234,212,.18) 50%, rgba(122,162,255,.18) 82%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, rgba(94,234,212,.10) 50%, transparent 100%);
+  opacity:.85;
+  pointer-events:none;
+  z-index:0;
+}
+
+/* Horizontal connector across the map */
+.experience-map::after{
+  content:"";
+  position:absolute;
+  left:12%;
+  right:12%;
+  top:50%;
+  height:1px;
+  background:linear-gradient(90deg, transparent, rgba(122,162,255,.45), rgba(94,234,212,.45), transparent);
+  pointer-events:none;
+  z-index:0;
+}
+
+.experience-card{
+  position:relative;
+  z-index:1;
+  min-height:172px;
+  border:1px solid rgba(231,236,255,.12);
+  background:
+    radial-gradient(420px 180px at 15% 0%, rgba(122,162,255,.12), transparent 52%),
+    rgba(255,255,255,.035);
+  border-radius:18px;
+  padding:18px 18px 16px 18px;
+  box-shadow:0 12px 34px rgba(0,0,0,.22);
+  transition:transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
+}
+
+/* Small node showing each card is attached to the path */
+.experience-card::before{
+  content:"";
+  position:absolute;
+  top:-9px;
+  left:22px;
+  width:15px;
+  height:15px;
+  border-radius:999px;
+  background:var(--accent2);
+  border:3px solid rgba(10,12,22,.95);
+  box-shadow:0 0 0 7px rgba(94,234,212,.10);
+}
+
+.experience-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(94,234,212,.42);
+  background:
+    radial-gradient(420px 180px at 15% 0%, rgba(122,162,255,.18), transparent 54%),
+    rgba(94,234,212,.055);
+  box-shadow:0 18px 44px rgba(0,0,0,.34);
+}
+
+.experience-card.featured{
+  border-color:rgba(94,234,212,.30);
+  background:
+    radial-gradient(480px 220px at 18% 0%, rgba(94,234,212,.16), transparent 54%),
+    rgba(255,255,255,.04);
+}
+
+.experience-step{
+  margin:0 0 8px 0;
+  color:var(--accent2);
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:900;
+}
+
+.experience-card h3{
+  margin:0 0 8px 0;
+  color:var(--text);
+  font-size:18px;
+  line-height:1.25;
+}
+
+.experience-card p{
+  color:var(--muted);
+  font-size:13.5px;
+  line-height:1.55;
+}
+
+.experience-link{
+  display:inline-flex;
+  margin-top:8px;
+  padding:7px 10px;
+  border-radius:999px;
+  border:1px solid rgba(94,234,212,.35);
+  background:rgba(94,234,212,.08);
+  color:var(--text);
+  font-size:12px;
+  font-weight:800;
+}
+
+.experience-link:hover{
+  color:var(--text);
+  background:rgba(94,234,212,.14);
+  border-color:rgba(94,234,212,.55);
+}
+
+/* Mobile layout */
+@media (max-width:980px){
+  .section-heading-row{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .section-note{
+    max-width:100%;
+  }
+
+  .experience-map{
+    grid-template-columns:1fr;
+    gap:16px;
+    padding-left:16px;
+  }
+
+  .experience-map::before{
+    inset:16px auto 16px 6px;
+    width:2px;
+    border:0;
+    border-radius:0;
+    background:linear-gradient(180deg, rgba(122,162,255,.45), rgba(94,234,212,.45));
+  }
+
+  .experience-map::after{
+    display:none;
+  }
+
+  .experience-card{
+    min-height:auto;
+  }
+
+  .experience-card::before{
+    left:-18px;
+    top:22px;
+  }
+}
