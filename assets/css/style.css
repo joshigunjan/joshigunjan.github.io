@@ -544,9 +544,8 @@ small{color:var(--muted)}
   background: rgba(255,255,255,0.02);
 }
 .pub-mini:hover{ text-decoration: underline; }
-
 /* =========================================================
-   Connected experience cards for homepage
+   Research threads / connected paper cards
    ========================================================= */
 
 .section-heading-row{
@@ -554,144 +553,165 @@ small{color:var(--muted)}
   align-items:flex-end;
   justify-content:space-between;
   gap:18px;
-  margin-bottom:16px;
+  margin-bottom:18px;
 }
 
 .section-title-sm{
   margin:4px 0 0 0;
-  font-size:26px;
-  line-height:1.2;
+  font-size:28px;
+  line-height:1.25;
+  max-width:760px;
 }
 
 .section-note{
   margin:0;
   max-width:34ch;
   color:var(--muted);
-  font-size:13px;
+  font-size:13.5px;
 }
 
 .experience-section{
   margin-top:4px;
 }
 
-.experience-map{
+.research-flow{
   position:relative;
   display:grid;
   grid-template-columns:repeat(3, minmax(0, 1fr));
-  gap:18px;
-  padding:8px 0;
+  gap:22px;
+  padding:12px 0 4px 0;
 }
 
-/* Soft connector background */
-.experience-map::before{
+/* Main connection spine */
+.research-flow::before{
   content:"";
   position:absolute;
-  inset:30px 18px 30px 18px;
-  border:1px solid rgba(94,234,212,.20);
-  border-radius:24px;
-  background:
-    linear-gradient(90deg, transparent 0%, rgba(122,162,255,.18) 18%, rgba(94,234,212,.18) 50%, rgba(122,162,255,.18) 82%, transparent 100%),
-    linear-gradient(180deg, transparent 0%, rgba(94,234,212,.10) 50%, transparent 100%);
-  opacity:.85;
-  pointer-events:none;
+  left:8%;
+  right:8%;
+  top:54px;
+  height:2px;
+  background:linear-gradient(
+    90deg,
+    rgba(122,162,255,.05),
+    rgba(122,162,255,.55),
+    rgba(94,234,212,.65),
+    rgba(122,162,255,.55),
+    rgba(122,162,255,.05)
+  );
   z-index:0;
 }
 
-/* Horizontal connector across the map */
-.experience-map::after{
+/* Second-row connection spine */
+.research-flow::after{
   content:"";
   position:absolute;
-  left:12%;
-  right:12%;
-  top:50%;
-  height:1px;
-  background:linear-gradient(90deg, transparent, rgba(122,162,255,.45), rgba(94,234,212,.45), transparent);
-  pointer-events:none;
+  left:8%;
+  right:8%;
+  top:calc(50% + 54px);
+  height:2px;
+  background:linear-gradient(
+    90deg,
+    rgba(122,162,255,.05),
+    rgba(122,162,255,.45),
+    rgba(94,234,212,.55),
+    rgba(122,162,255,.45),
+    rgba(122,162,255,.05)
+  );
   z-index:0;
 }
 
-.experience-card{
+.research-node{
   position:relative;
   z-index:1;
-  min-height:172px;
+  min-height:260px;
   border:1px solid rgba(231,236,255,.12);
   background:
     radial-gradient(420px 180px at 15% 0%, rgba(122,162,255,.12), transparent 52%),
     rgba(255,255,255,.035);
-  border-radius:18px;
-  padding:18px 18px 16px 18px;
+  border-radius:20px;
+  padding:58px 20px 18px 20px;
   box-shadow:0 12px 34px rgba(0,0,0,.22);
   transition:transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
 }
 
-/* Small node showing each card is attached to the path */
-.experience-card::before{
-  content:"";
-  position:absolute;
-  top:-9px;
-  left:22px;
-  width:15px;
-  height:15px;
-  border-radius:999px;
-  background:var(--accent2);
-  border:3px solid rgba(10,12,22,.95);
-  box-shadow:0 0 0 7px rgba(94,234,212,.10);
-}
-
-.experience-card:hover{
+.research-node:hover{
   transform:translateY(-4px);
-  border-color:rgba(94,234,212,.42);
+  border-color:rgba(94,234,212,.45);
   background:
-    radial-gradient(420px 180px at 15% 0%, rgba(122,162,255,.18), transparent 54%),
-    rgba(94,234,212,.055);
+    radial-gradient(420px 180px at 15% 0%, rgba(94,234,212,.15), transparent 52%),
+    rgba(255,255,255,.045);
   box-shadow:0 18px 44px rgba(0,0,0,.34);
 }
 
-.experience-card.featured{
+.research-node.featured{
   border-color:rgba(94,234,212,.30);
   background:
     radial-gradient(480px 220px at 18% 0%, rgba(94,234,212,.16), transparent 54%),
     rgba(255,255,255,.04);
 }
 
+.node-icon{
+  position:absolute;
+  top:18px;
+  left:20px;
+  width:34px;
+  height:34px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#061018;
+  background:var(--accent2);
+  box-shadow:
+    0 0 0 8px rgba(94,234,212,.12),
+    0 0 22px rgba(94,234,212,.30);
+  font-size:15px;
+}
+
 .experience-step{
-  margin:0 0 8px 0;
-  color:var(--accent2);
+  margin:0 0 10px 0;
+  color:var(--muted);
   font-size:11px;
-  letter-spacing:.14em;
+  letter-spacing:.16em;
   text-transform:uppercase;
   font-weight:900;
 }
 
-.experience-card h3{
-  margin:0 0 8px 0;
+.research-node h3{
+  margin:0 0 10px 0;
   color:var(--text);
-  font-size:18px;
-  line-height:1.25;
+  font-size:20px;
+  line-height:1.2;
 }
 
-.experience-card p{
+.research-node p{
   color:var(--muted);
   font-size:13.5px;
   line-height:1.55;
 }
 
-.experience-link{
+.paper-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+}
+
+.paper-links a{
   display:inline-flex;
-  margin-top:8px;
-  padding:7px 10px;
+  align-items:center;
+  padding:6px 10px;
   border-radius:999px;
-  border:1px solid rgba(94,234,212,.35);
+  border:1px solid rgba(94,234,212,.34);
   background:rgba(94,234,212,.08);
   color:var(--text);
   font-size:12px;
   font-weight:800;
 }
 
-.experience-link:hover{
-  color:var(--text);
-  background:rgba(94,234,212,.14);
-  border-color:rgba(94,234,212,.55);
+.paper-links a:hover{
+  border-color:rgba(94,234,212,.60);
+  background:rgba(94,234,212,.15);
 }
 
 /* Mobile layout */
@@ -705,30 +725,37 @@ small{color:var(--muted)}
     max-width:100%;
   }
 
-  .experience-map{
+  .research-flow{
     grid-template-columns:1fr;
-    gap:16px;
-    padding-left:16px;
+    gap:18px;
+    padding-left:18px;
   }
 
-  .experience-map::before{
-    inset:16px auto 16px 6px;
+  .research-flow::before{
+    left:7px;
+    right:auto;
+    top:24px;
+    bottom:24px;
     width:2px;
-    border:0;
-    border-radius:0;
-    background:linear-gradient(180deg, rgba(122,162,255,.45), rgba(94,234,212,.45));
+    height:auto;
+    background:linear-gradient(
+      180deg,
+      rgba(122,162,255,.45),
+      rgba(94,234,212,.65),
+      rgba(122,162,255,.45)
+    );
   }
 
-  .experience-map::after{
+  .research-flow::after{
     display:none;
   }
 
-  .experience-card{
+  .research-node{
     min-height:auto;
   }
 
-  .experience-card::before{
+  .node-icon{
     left:-18px;
-    top:22px;
+    top:24px;
   }
 }
